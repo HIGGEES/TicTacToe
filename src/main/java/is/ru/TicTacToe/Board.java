@@ -4,9 +4,10 @@ import java.lang.StringBuilder;
 
 public class Board {
 	private char[] board;
+	private final int sizeOfBoard = 9;
 
 	public Board() {
-		this.board = new char[9];
+		this.board = new char[this.sizeOfBoard];
 		setBoard();
 	} 
 	
@@ -19,12 +20,12 @@ public class Board {
 	}
 
 	private void setBoard() {
-		for (int i = 0; i < 9; i++) 
-			this.board[i] = '-';
+		for (int i = 0; i < this.sizeOfBoard; i++) 
+			this.board[i] = (char)('0' + i);
 	}
 	
 	public boolean isFieldEmpty(int i) {
-		if (this.board[i] == '-')
+		if (this.board[i] == (char)('0' + i))
 			return true;
 		return false;
 	}
@@ -37,5 +38,17 @@ public class Board {
 		else
 			this.board[i] = s;
 			
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder result = new StringBuilder();
+		String NEW_LINE = System.getProperty("line.separator");
+		for (int i = 0; i < this.sizeOfBoard; i++) {
+			if (i % 3 == 0)
+				result.append(NEW_LINE);
+			result.append(" | " + board[i] + " | ");
+		}
+		return result.toString();
 	}
 }
