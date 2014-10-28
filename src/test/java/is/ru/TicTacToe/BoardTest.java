@@ -24,5 +24,16 @@ public class BoardTest {
 	public void isFieldEmptyTest() {
 		assertTrue(b.isFieldEmpty(1));
 	}
+	
+	@Test
+	public void getFieldTest() {
+		assertEquals(this.b.getField(1), '-');
+	}
+
+	@Test
+	public void setFieldTest() {
+		this.b.setField(1, 'X');
+		assertEquals(this.b.getField(1), 'X');
+	}
 
 }

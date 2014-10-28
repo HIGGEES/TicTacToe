@@ -10,6 +10,10 @@ public class Board {
 		setBoard();
 	} 
 	
+	public char getField(int i) {
+		return this.board[i];
+	}
+
 	public char[] getBoard() {
 		return this.board;
 	}
@@ -23,5 +27,15 @@ public class Board {
 		if (this.board[i] == '-')
 			return true;
 		return false;
+	}
+
+	public void setField(int i, char s) {
+		if (i < 0 || i > 8)
+			;
+		else if (!isFieldEmpty(i))
+			;
+		else
+			this.board[i] = s;
+			
 	}
 }
