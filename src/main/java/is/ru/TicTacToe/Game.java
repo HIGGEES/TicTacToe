@@ -18,7 +18,7 @@ public class Game {
 	}
 
 	public static void main(String[] args) {
-		StdOut.println("Testa gradle build scriptu ekkert test case fyrir þetta");
+		System.out.println("Testa gradle build scriptu ekkert test case fyrir þetta");
 
 	}
 }
