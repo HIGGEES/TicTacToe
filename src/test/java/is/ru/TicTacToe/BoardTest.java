@@ -72,4 +72,16 @@ public class BoardTest {
 		Board b = new Board(getFullBoard());
 		assertFalse(b.isWinner());
 	}
+
+	@Test
+	public void isGameOverTest() {
+		Board b = new Board();
+		assertFalse(b.isGameOver());
+	}
+
+	@Test
+	public void isGameOverOnFullBoardTest() {
+		Board b = new Board(getFullBoard());
+		assertTrue(b.isGameOver());
+	}
 }
