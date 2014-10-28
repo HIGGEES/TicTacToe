@@ -1,3 +1,6 @@
+### Status
+[![Build Status](https://travis-ci.org/HIGGEES/TicTacToe.svg)](https://travis-ci.org/HIGGEES/TicTacToe)
+
 TicTacToe
 =========
 
