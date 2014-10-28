@@ -19,6 +19,14 @@ public class BoardTest {
 		};
 		return b;
 	}
+	
+	private char[] getFullBoard() {
+		char[] b = {	'X','O','X',
+				'X','O','X',
+				'O','X','O'
+		};
+		return b;
+	}
 
 	@Test
 	public void boardTest(){
@@ -57,5 +65,11 @@ public class BoardTest {
 	public void isWinnerOnWinningBoardTest() {
 		Board b = new Board(getWinnerBoard());
 		assertTrue(b.isWinner());
+	}
+
+	@Test
+	public void isWinnerOnFullBoardTest() {
+		Board b = new Board(getFullBoard());
+		assertFalse(b.isWinner());
 	}
 }
