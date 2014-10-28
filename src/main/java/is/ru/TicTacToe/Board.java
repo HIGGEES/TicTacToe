@@ -19,4 +19,9 @@ public class Board {
 			this.board[i] = '-';
 	}
 	
+	public boolean isFieldEmpty(int i) {
+		if (this.board[i] == '-')
+			return true;
+		return false;
+	}
 }
