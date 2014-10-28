@@ -7,34 +7,55 @@ import org.junit.Test;
 
 public class BoardTest {
 	
-	private Board b = new Board();
-
 	private char[] getEmptyBoard() {
 		char[] b = {'0','1','2','3','4','5','6','7','8'};
+		return b;
+	}
+	
+	private char[] getWinnerBoard() {
+		char[] b = {	'X','1','2',
+				'3','X','5',
+				'O','O','X'
+		};
 		return b;
 	}
 
 	@Test
 	public void boardTest(){
+		Board b = new Board();
 		char[] emptyBoard = getEmptyBoard();
 		assertArrayEquals(emptyBoard, b.getBoard());
 	}
 	
 	@Test
 	public void isFieldEmptyTest() {
+		Board b = new Board();
 		assertTrue(b.isFieldEmpty(1));
 	}
 	
 	@Test
 	public void getFieldTest() {
-		char testIt = (char)('0'+1);
-		assertEquals(this.b.getField(1), testIt);
+		char testIt = (char)('0' + 1);
+		Board b = new Board();
+		assertEquals(b.getField(1), testIt);
 	}
 
 	@Test
 	public void setFieldTest() {
-		this.b.setField(1, 'X');
-		assertEquals(this.b.getField(1), 'X');
+		Board b = new Board();
+		b.setField(1, 'X');
+		assertEquals(b.getField(1), 'X');
 	}
 
+	@Test
+	public void isWinnerOnEmptyBoardTest() {
+		Board b = new Board();
+		assertFalse(b.isWinner());
+	}
+	
+	@Test
+	public void isWinnerOnWinningBoardTest() {
+		Board b = new Board(getWinnerBoard());
+		assertTrue(b.isWinner());
+	}
 }

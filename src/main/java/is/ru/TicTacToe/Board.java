@@ -11,6 +11,10 @@ public class Board {
 		setBoard();
 	} 
 	
+	public Board(char[] b) {
+		this.board = b;
+	}
+
 	public char getField(int i) {
 		return this.board[i];
 	}
@@ -39,6 +43,26 @@ public class Board {
 			this.board[i] = s;
 			
 	}
+	
+	public boolean isWinner() {
+		if (this.board[0] == this.board[1] && this.board[1] == this.board[2])
+			return true;
+		if (this.board[3] == this.board[4] && this.board[4] == this.board[5])
+			return true;
+		if (this.board[6] == this.board[7] && this.board[7] == this.board[8])
+			return true;
+		if (this.board[0] == this.board[4] && this.board[4] == this.board[8])
+			return true;
+		if (this.board[2] == this.board[4] && this.board[4] == this.board[6])
+			return true;
+		if (this.board[0] == this.board[3] && this.board[3] == this.board[6])
+			return true;
+		if (this.board[1] == this.board[4] && this.board[4] == this.board[7])
+			return true;
+		if (this.board[2] == this.board[5] && this.board[5] == this.board[8])
+			return true;
+		return false;
+	}
 
 	@Override
 	public String toString() {
@@ -47,7 +71,7 @@ public class Board {
 		for (int i = 0; i < this.sizeOfBoard; i++) {
 			if (i % 3 == 0)
 				result.append(NEW_LINE);
-			result.append(" | " + board[i] + " | ");
+			result.append(" | " + this.board[i] + " | ");
 		}
 		return result.toString();
 	}
