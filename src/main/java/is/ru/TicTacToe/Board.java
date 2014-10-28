@@ -63,6 +63,13 @@ public class Board {
 			return true;
 		return false;
 	}
+	
+	public boolean isGameOver() {
+		for (int i = 0; i < this.sizeOfBoard; i++)
+			if ( ((char)('0' + i)) == this.board[i])
+				return false;
+		return true;
+	}
 
 	@Override
 	public String toString() {
