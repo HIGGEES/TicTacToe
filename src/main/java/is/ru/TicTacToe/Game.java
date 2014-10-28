@@ -1,5 +1,6 @@
 package is.ru.TicTacToe;
 
+
 public class Game {
 	
 	private Board b;
@@ -18,7 +19,7 @@ public class Game {
 	}
 
 	public static void main(String[] args) {
-		StdOut.println("Testa gradle build scriptu ekkert test case fyrir þetta");
+		System.out.println("Testa gradle build scriptu ekkert test case fyrir þetta");
 
 	}
 }

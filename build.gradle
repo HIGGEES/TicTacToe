@@ -20,16 +20,13 @@ repositories {
 }
 
 
-sourceCompatibility = 1.7
-version = 1.0
+// sourceCompatibility = 1.7
+// version = 1.0
 jar {
+    baseName = 'TicTacToe'
+    version =  '0.1.0'
     manifest {
-        attributes 'TicTacToe': 'TicTacToe',
-        'Implementation-Version': version,
-        'Built-By': System.getProperty('user.name'),
-        'Built-Date': new Date(),
-        'Built-JDK': System.getProperty('java.version'),
-        'Built-Gradle': gradle.gradleVersion
+        attributes 'Main-Class': 'is.ru.TicTacToe.Game'
     }
 }
 
@@ -45,13 +42,3 @@ dependencies {
     testCompile 'junit:junit:4.11'
 }
 
-jar {
-manifest {
-attributes 'Implementation-Title': 'Gradle GAE plugin',
-'Implementation-Version': version,
-'Built-By': System.getProperty('user.name'),
-'Built-Date': new Date(),
-'Built-JDK': System.getProperty('java.version'),
-'Built-Gradle': gradle.gradleVersion
-}
-}
