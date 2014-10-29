@@ -2,6 +2,7 @@ package is.ru.TicTacToe;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
+import java.lang.StringBuilder;
 
 public class GameTest {
 	
@@ -49,7 +50,7 @@ public class GameTest {
 
 	@Test
 	public void testIsWinner() {
-		
+
 		char[] a = {'0','1','2',
 					'3','4','5',
 					'6','7','8'
@@ -67,5 +68,20 @@ public class GameTest {
 		d = new Board(b);
 		g = new Game(d,4);
 		assertEquals(g.isWinner(),true);
+	}
+
+	@Test
+	public void testDrawBoard(){
+		Game g = new Game();
+		StringBuilder result = new StringBuilder();
+		String NEW_LINE = System.getProperty("line.separator");
+		for (int i = 0; i < 9; i++) {
+			if (i % 3 == 0)
+			{
+				result.append(NEW_LINE);
+			}
+			result.append(" | " + ((char)('0'+ i)) + " | ");
+		}
+		assertEquals(g.drawBoard(), result.toString());
 	}
 }

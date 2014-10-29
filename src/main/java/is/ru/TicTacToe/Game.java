@@ -57,6 +57,10 @@ public class Game {
 		return this.movesLeft;
 	}
 
+	public String drawBoard(){
+		return b.toString();
+	}
+
 	public static void main(String[] args) {
 		System.out.println("Testa gradle build scriptu ekkert test case fyrir þetta");
 
