@@ -1,5 +1,6 @@
 package is.ru.TicTacToe;
 
+import java.util.Scanner;
 
 public class Game {
 	
@@ -21,14 +22,23 @@ public class Game {
 		{
 			if(movesLeft % 2 == 0)
 			{
-				this.b.setField(spot, player2.getSymbol());
+				if(this.b.setField(spot, player2.getSymbol()))
+				{
+					this.movesLeft--;
+					return true;
+				}
+				return false;
+				
 			}
 			else
 			{
-				this.b.setField(spot, player1.getSymbol());	
+				if(this.b.setField(spot, player1.getSymbol()))
+				{
+					this.movesLeft--;
+					return true;
+				}	
+				return false;
 			}
-			this.movesLeft--;
-			return true;
 		}
 		return false;
 	} 
@@ -62,7 +72,36 @@ public class Game {
 	}
 
 	public static void main(String[] args) {
-		System.out.println("Testa gradle build scriptu ekkert test case fyrir þetta");
-
+		Scanner in = new Scanner(System.in);
+		int input;
+		Game g = new Game();
+		System.out.println(g.drawBoard());
+		System.out.println("veldu tölu á milli 0-8 ");
+		while(!g.gameOver())
+		{
+			input = in.nextInt();
+			while(!g.playTurn(input))
+			{
+				System.out.println("veldu tölu á milli 0-8 ");
+				input = in.nextInt();
+			}
+			System.out.println(g.drawBoard());
+		}
+		System.out.println("leik lokið");
+		if(g.gameOver() && g.isWinner())
+		{
+			if(g.getMovesLeft() % 2 == 0)
+			{
+				System.out.println("Leikmaður 1 bar sigur úr bítum");
+			}
+			else
+			{
+				System.out.println("Leikmaður 2 bar sigur úr bítum");
+			}
+		}
+		else
+		{
+			System.out.println("Enginn bar sigur úr bítum");
+		}
 	}
 }

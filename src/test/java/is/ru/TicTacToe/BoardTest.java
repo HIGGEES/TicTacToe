@@ -51,9 +51,11 @@ public class BoardTest {
 	@Test
 	public void setFieldTest() {
 		Board b = new Board();
-		b.setField(1, 'X');
+		assertEquals(b.setField(1, 'X'), true);
 		assertEquals(b.getField(1), 'X');
 	}
+
+
 
 	@Test
 	public void isWinnerOnEmptyBoardTest() {

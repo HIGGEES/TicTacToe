@@ -34,14 +34,23 @@ public class Board {
 		return false;
 	}
 
-	public void setField(int i, char s) {
-		if (i < 0 || i > 8)
-			;
-		else if (!isFieldEmpty(i))
-			;
-		else
-			this.board[i] = s;
-			
+	public boolean setField(int i, char s) {
+		if (i >= 0 && i < 9)
+		{
+			if (!isFieldEmpty(i))
+			{
+				return false;
+			}
+			else
+			{
+				this.board[i] = s;
+				return true;
+			}
+		}
+		else 
+		{
+			return false;
+		}
 	}
 	
 	public boolean isWinner() {
