@@ -26,7 +26,11 @@ jar {
     baseName = 'TicTacToe'
     version =  '0.1.0'
     manifest {
-        attributes 'Main-Class': 'is.ru.TicTacToe.Game'
+        attributes  'Main-Class': 'is.ru.TicTacToe.Game',
+                    'Built-By': System.getProperty('user.name'),
+                    'Built-Date': new Date(),
+                    'Built-JDK': System.getProperty('java.version'),
+                    'Built-Gradle': gradle.gradleVersion
     }
 }
 
