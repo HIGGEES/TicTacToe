@@ -10,4 +10,11 @@ public class GameTest {
 		Game g = new Game();
 		assertEquals(g.getMovesLeft(), 9);
 	}
+
+	@Test
+	public void testPlayTurn() {
+		Game g = new Game();
+		assertEquals(g.playTurn('X'),true);
+	}
 }
+
