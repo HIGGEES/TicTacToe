@@ -33,8 +33,10 @@ public class Game {
 		return false;
 	} 
 
+	public boolean isWinner(){
+		return b.isWinner();
+	}
 
-	
 	public boolean gameOver() {
 
 		 if(getMovesLeft() == 0 || b.isWinner())

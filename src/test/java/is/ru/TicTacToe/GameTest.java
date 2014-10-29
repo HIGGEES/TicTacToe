@@ -19,7 +19,6 @@ public class GameTest {
 
 	@Test
 	public void testGameOver() {
-
 		char[] a = {'0','1','2',
 					'3','4','5',
 					'6','7','8'
@@ -47,5 +46,26 @@ public class GameTest {
 		g = new Game(d,0);
 		assertEquals(g.gameOver(),true);
 	}
-}
 
+	@Test
+	public void testIsWinner() {
+		
+		char[] a = {'0','1','2',
+					'3','4','5',
+					'6','7','8'
+					}; //empty board
+
+		char[] b = {'X','1','2',
+					'3','X','5',
+					'O','O','X'
+					}; //winner
+
+		Board d = new Board(a);
+		Game g = new Game(d,9);
+		assertEquals(g.isWinner(),false);
+
+		d = new Board(b);
+		g = new Game(d,4);
+		assertEquals(g.isWinner(),true);
+	}
+}
