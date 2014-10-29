@@ -82,7 +82,7 @@ public class Game {
 			input = in.nextInt();
 			while(!g.playTurn(input))
 			{
-				System.out.println("veldu tölu á milli 0-8 ");
+				System.out.println("Kjáninn þinn þú verður að velja tölu á milli 0-8 auli");
 				input = in.nextInt();
 			}
 			System.out.println(g.drawBoard());
