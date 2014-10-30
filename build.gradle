@@ -47,3 +47,21 @@ dependencies {
 }
 
 task stage { dependsOn installApp }
+
+
+// búa til task sem tekur TicTacToe jar file of færir útfyrir working directory
+
+def jarDir = new File('../TicTacToeGame')
+
+task extractJar {
+    doFirst{
+        if(!jarDir.isDirectory()){
+            jarDir.mkdirs()
+        }
+    }
+    copy {
+        from "build/libs/"
+        into '../TicTacToeGame'
+    }   
+}
+
