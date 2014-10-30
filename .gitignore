@@ -1,2 +1,13 @@
 .gradle
-build/
+build/classes  
+build/dependency-cache  
+build/libs  
+build/reports  
+build/resources  
+build/test-results  
+build/tmpclasses  
+build/dependency-cache  
+build/libs  
+build/reports    
+build/test-results  
+build/tmp
