@@ -31,6 +31,7 @@ jar {
                     'Built-Date': new Date(),
                     'Built-JDK': System.getProperty('java.version'),
                     'Built-Gradle': gradle.gradleVersion
+		    
     }
 }
 
@@ -48,7 +49,11 @@ dependencies {
     compile 'com.sparkjava:spark-core:1.1.1'
 }
 
-task stage { dependsOn installApp }
+mainClassName = "is.ru.TicTacToe.GameWeb"
+
+task stage { 
+	dependsOn installApp 
+}
 
 
 // búa til task sem tekur TicTacToe jar file of færir útfyrir working directory
