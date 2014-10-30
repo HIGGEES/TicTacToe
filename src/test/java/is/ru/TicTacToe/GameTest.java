@@ -84,4 +84,15 @@ public class GameTest {
 		}
 		assertEquals(g.drawBoard(), result.toString());
 	}
+
+	@Test
+	public void testGetBoard(){
+		char[] b = {'X','1','2',
+			'3','X','5',
+			'O','O','X'
+			};
+		Board a = new Board(b);
+		Game g = new Game(a,4);
+		assertEquals(g.getBoard(),b);
+	}
 }

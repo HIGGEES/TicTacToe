@@ -1,6 +1,7 @@
-package is.ru.sparkit;
+package is.ru.TicTacToe;
 
-import TicTacToe.*;
+//import TicTacToe.*;
+import spark.*;
 import static spark.Spark.*;
 import spark.servlet.SparkApplication;
 
@@ -34,9 +35,9 @@ public class GameWeb implements SparkApplication {
 
 					if(!ticTacToe.gameOver()){
 						String winner = "Leik Lokið ";
-						if(g.isWinner())
+						if(ticTacToe.isWinner())
 						{
-							if(g.getMovesLeft() % 2 == 0)
+							if(ticTacToe.getMovesLeft() % 2 == 0)
 							{
 								winner.concat("leikmaður 1 bar sigur úr bítum");
 							}
@@ -56,15 +57,15 @@ public class GameWeb implements SparkApplication {
 					}
 			}
 		});
-	
+	/*
 		post(new Route("/newGame"){
-			@Ovrride
+			@Override
 			public Object handle(Request request, Response response){
 				ticTacToe = new Game();
 				String board = ticTacToe.drawBoard();
 				return board;
 			}
-		});
+		});*/
 
 	}
 }

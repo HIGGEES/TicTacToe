@@ -56,6 +56,10 @@ public class Game {
 		 return false;
 	}
 
+	public char[] getBoard(){
+		return b.getBoard();
+	}
+
 	public Game(Board b, int turns) {
 		this.b = b;
 		this.movesLeft = turns;
