@@ -80,7 +80,7 @@ public class Game {
 		int input;
 		Game g = new Game();
 		System.out.println(g.drawBoard());
-		System.out.println("veldu tölu á milli 0-8 ");
+		System.out.println("veldu tolu a milli 0-8 ");
 		while(!g.gameOver())
 		{
 			try
@@ -94,7 +94,7 @@ public class Game {
 
 			while(!g.playTurn(input))
 			{
-				System.out.println("Kjáninn þinn þú verður að velja tölu á milli 0-8");
+				System.out.println("Kjaninn thinn thu verdur ad velja tolu a milli 0-8");
 				try
 				{
 					input = Integer.parseInt(System.console().readLine());
@@ -106,21 +106,21 @@ public class Game {
 			}
 			System.out.println(g.drawBoard());
 		}
-		System.out.println("leik lokið");
+		System.out.println("leik lokid");
 		if(g.gameOver() && g.isWinner())
 		{
 			if(g.getMovesLeft() % 2 == 0)
 			{
-				System.out.println("Leikmaður 1 bar sigur úr bítum");
+				System.out.println("Leikmadur 1 bar sigur ur bitum");
 			}
 			else
 			{
-				System.out.println("Leikmaður 2 bar sigur úr bítum");
+				System.out.println("Leikmadur 2 bar sigur ur bitum");
 			}
 		}
 		else
 		{
-			System.out.println("Enginn bar sigur úr bítum");
+			System.out.println("Enginn bar sigur ur bitum");
 		}
 	}
 }
