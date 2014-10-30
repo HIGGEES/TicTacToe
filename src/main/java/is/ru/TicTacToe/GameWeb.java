@@ -30,16 +30,18 @@ public class GameWeb implements SparkApplication {
 			public Object handle(Request request, Response response){
 				Integer number = Integer.valueOf(request.queryParams("playTurn")) - 1;
 					ticTacToe.playTurn(number);
-					String board = ticTacToe.drawBoard();
-
-
+					String board = "";
+					char[] tmp = ticTacToe.getBoard();
+					for(int x = 0; x < tmp.length; x++){
+						board = board + tmp[x] + ' ';
+					}
 					if(!ticTacToe.gameOver()){
 						String winner = "Leik Lokid ";
 						if(ticTacToe.isWinner())
 						{
 							if(ticTacToe.getMovesLeft() % 2 == 0)
 							{
-								winner.concat("leikmadur i bar sigur ur bitum");
+								winner.concat("leikmadur 1 bar sigur ur bitum");
 							}
 							else
 							{
