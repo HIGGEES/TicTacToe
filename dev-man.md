@@ -49,7 +49,7 @@ Running the project
 
 Clone this project to your computer, run this command:
 
-git clone git@github.com:HIGGEES/TicTacToe.git
+	git clone git@github.com:HIGGEES/TicTacToe.git
 
 To run the application run the following commands from the root of the project:
         bin/package
