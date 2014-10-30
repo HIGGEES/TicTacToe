@@ -72,18 +72,33 @@ public class Game {
 	}
 
 	public static void main(String[] args) {
-		Scanner in = new Scanner(System.in);
+		//Scanner in = new Scanner(System.in);
 		int input;
 		Game g = new Game();
 		System.out.println(g.drawBoard());
 		System.out.println("veldu tölu á milli 0-8 ");
 		while(!g.gameOver())
 		{
-			input = in.nextInt();
+			try
+			{
+				input = Integer.parseInt(System.console().readLine());
+			}
+			catch (NumberFormatException ex)
+			{
+				input = -1;
+			}
+
 			while(!g.playTurn(input))
 			{
-				System.out.println("Kjáninn þinn þú verður að velja tölu á milli 0-8 auli");
-				input = in.nextInt();
+				System.out.println("Kjáninn þinn þú verður að velja tölu á milli 0-8");
+				try
+				{
+					input = Integer.parseInt(System.console().readLine());
+				}
+				catch (NumberFormatException ex)
+				{
+					input = -1;
+				}
 			}
 			System.out.println(g.drawBoard());
 		}
