@@ -10,11 +10,11 @@ http://higgees.herokuapp.com/
 
 https://github.com/HIGGEES/TicTacToe
 
-## screenshots
+## screenshot
 
 ![random](Figures/TicTacToe.PNG)
 
-##### Developer platforms:
+##### Developer platform:
 
 Windows
 
