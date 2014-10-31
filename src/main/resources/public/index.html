@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>TicTacToe</title>
+        <title>Hérna labba kútur</title>
 
     </head>
     <body>
@@ -11,35 +11,35 @@
         <table>
         	<tr>
 			    <td>
-                	<button value="1" onclick="playTurn(1)">
+                	<button value="1" onclick="playTurn(1)">1</button>
                 </td>
 			    <td>
-                	<button value="2" onclick="playTurn(2)">
+                	<button value="2" onclick="playTurn(2)">2</button>
                 </td>
                 <td>
-                	<button value="3" onclick="playTurn(3)">
+                	<button value="3" onclick="playTurn(3)">3</button>
                 </td>
 			</tr>
         	<tr>
 			    <td>
-                	<button value="4" onclick="playTurn(4)">
+                	<button value="4" onclick="playTurn(4)">4</button>
                 </td>
 			    <td>
-                	<button value="5" onclick="playTurn(5)">
+                	<button value="5" onclick="playTurn(5)">5</button>
                 </td>
                 <td>
-                	<button value="6" onclick="playTurn(6)">
+                	<button value="6" onclick="playTurn(6)">6</button>
                 </td>
 			</tr>
         	<tr>
 			    <td>
-                	<button value="7" onclick="playTurn(7)">
+                	<button value="7" onclick="playTurn(7)">7</button>
                 </td>
 			    <td>
-                	<button value="8" onclick="playTurn(8)">
+                	<button value="8" onclick="playTurn(8)">8</button>
                 </td>
                 <td>
-                	<button value="9" onclick="playTurn(9)">
+                	<button value="9" onclick="playTurn(9)">9</button>
                 </td>
 			</tr>			
         </table>
@@ -57,12 +57,7 @@
         <script>
         $(document).ready(function() {
             function playTurn(a) {
-                $.ajax({
-                    type: "post".
-                    url: "playTurn",
-                    data: 'playTurn=' + a;
-                }).done(function(){
-                    alert("KalliBobo" + a);
+                    alert(a);
                 }
             }
         });
