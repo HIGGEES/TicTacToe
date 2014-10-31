@@ -1,79 +1,212 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>TicTacToe</title>
+  <head>
+    <meta charset="utf-8">
+    <title>TicTacToe</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    </head>
-    <body>
-        <div>
-            <h1>TicTacToe</h1>
+    <!-- load bootstrap for nicer ui -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+
+    <style>
+    #tictactoe tbody tr td {
+    background-color: white;
+    padding: 50px;
+    border: 5px solid black;
+    font-size:50px;
+  }
+  td {
+    width:145px;
+  }
+  .red {
+    color: red;
+  }
+  .blue {
+    color: blue;
+  }
+  #p1 {
+    margin-left: 16px;
+  }
+  #p2 {
+    margin-left:220px;
+  }
+  #gameover {
+    display:none;
+    background-color: black;
+    width: 465px;
+    height: 644px;
+    position: absolute;
+    margin-top: 16px;
+    opacity: 0.8;
+    border-radius: 10px;
+    margin-left: -17px;
+  }
+  #winner-name {
+    color: white;
+    font-size: 55px;
+    text-align: center;
+    margin-top: 200px;
+  }
+  #playay {
+    margin-left: 182px;
+  }
+  #turn {
+    display :none;
+  }
+</style>
+
+  </head>
+  <body>
+
+    <div class="container">
+      <div id="gameover">
+      <div id="winner-name"></div><input type="button" class="btn btn-default" value="Play again!" id="playay"onClick="window.location.reload()"></div>
+
+      <h1>WELCOME </h1>
+      <span id="p1"></span><span id="p2"></span>
+
+      <div id="theForm">
+      <p>Please type in your names to start.</p>
+
+      <form method="post" action="/add" class="form-inline" role="form">
+        <div class="form-group">
+          <input type="text" class="form-control" name="a" id="a" placeholder="Player 1">
         </div>
-        <form method="POST" action="/playTurn" class="form-inline" role="form" id="kalliBobo">
-            <table>
-            	<tr>
-    			    <td>
-                    	<input type="submit" value="1">
-                    </td>
-    			    <td>
-                    	<input type="submit" value="2">
-                    </td>
-                    <td>
-                    	<input type="submit" value="3">
-                    </td>
-    			</tr>
-            	<tr>
-    			    <td>
-                    	<input type="submit" value="4">
-                    </td>
-    			    <td>
-                    	<input type="submit" value="5">
-                    </td>
-                    <td>
-                    	<input type="submit" value="6">
-                    </td>
-    			</tr>
-            	<tr>
-    			    <td>
-                    	<input type="submit" value="7">
-                    </td>
-    			    <td>
-                    	<input type="submit" value="8">
-                    </td>
-                    <td>
-                    	<input type="submit" value="9">
-                    </td>
-    			</tr>			
-            </table>
-        </form>
-        <div id="results" class="alert alert-info">How many Chuck Norris require to screw a light
-        bulb? None, he will screw it all.</div>
+        <div class="form-group">
+          <input type="text" class="form-control" name="b" id="b" placeholder="Player 2">
+        </div>
+        <button type="submit" class="btn btn-default">New Game</button>
+      </form>
+      <hr>
+    </div>
+
+<div id="board">
+  <span id="turn">0</span>
+<table id ="tictactoe">
+    <tbody>
+        <tr>
+            <td id="0,0">&nbsp;</td>
+            <td id="0,1">&nbsp;</td>
+            <td id="0,2">&nbsp;</td>
+        </tr>
+        <tr>
+            <td id="1,0">&nbsp;</td>
+            <td id="1,1">&nbsp;</td>
+            <td id="1,2">&nbsp;</td>
+        </tr>
+        <tr>
+            <td id="2,0">&nbsp;</td>
+            <td id="2,1">&nbsp;</td>
+            <td id="2,2">&nbsp;</td>
+        </tr>
+      
+    </tbody>
+</table>
+
+  </div>
+
+      </div>
 
 
-        <form method="post" action="/newGame" class="form-inline" role="form">
-            <button type="submit">NewGame</button>
-        </form>
-        <!-- Load jquery -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <!-- load jquery -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
-        <!-- Use ajax to submit form, retrive joke and display on page -->
-        <script>
-
-        $(document).ready(function() {
-            var form = $('form');
-            form.submit(function( event ) {
-                var form = $("#kalliBobo").val();
-                $.ajax({
-                    type: form.attr('method'),
-                    url: form.attr('action'),
-                    data: 'playTurn' + value
-                }).done(function(joke) {
-                    $('#results').html(joke).attr('class', 'alert alert-success');
-                }).fail(function() {
-                    $('#results').html('Error, no joke found...').attr('class', 'alert alert-danger');
-                });
-                event.preventDefault();
-            });
+    <!-- use ajax to submit form, retreive the result and display on the page -->
+    <script>
+    $(document).ready(function() {
+      var a;
+      var b;
+      $("#p1").css("background-color", "red");
+      $('#board').hide();
+      var form = $('form');
+      form.submit(function(e) {
+        a = $("#a").val();
+        b = $("#b").val();
+        $.ajax({
+          type: form.attr('method'),
+          url: form.attr('action'),
+          data: 'a=' + a + '&b=' + b
+        }).done(function(sum) {
+          if (sum) {
+            //senda  a /newgame og byrja leik
+            $('#board').show();
+            $('#theForm').hide();
+            $('.container h1').html('Lets play!');
+            $('#p1').html("Player1: <strong>" + a + "</strong>");
+            $('#p2').html("Player2: <strong>" + b + "</strong>");
+          } 
+          // $('#results').html(a + ' + ' + b + ' = ' + sum).attr('class', 'alert alert-success');
+        }).fail(function() {
+          $('#results').html('ERROR!').attr('class', 'alert alert-danger');
         });
-        </script>
-    </body>
+        e.preventDefault();
+      });
+      $('td').click( function() {
+        // console.log(this.id);
+        var player = $('#turn');
+        var cell = this;
+        $.ajax({
+          type: "post",
+          url: "/play",
+          data: 'player=' + player.html() + '&cellId=' + cell.id
+        }).done(function(result) {
+          // console.log(result);
+          //teikna a borddid videigandai takn og skipta um player ef vid a
+          var r = result.split(",");
+          console.log(r);
+          if (r[0] === 'ok') {
+            if(r[1] === '0') {
+              //teikna X
+              $("#p2").css("background-color", "red");
+              $(cell).html("X");
+              console.log(r[1]);
+              player.html("1");
+              $("#p1").css("background-color", "white");
+            } else if (r[1] === '1') {
+              //teikna O
+              $("#p1").css("background-color", "red");
+              $(cell).html("O");
+              player.html("0");
+              $("#p2").css("background-color", "white");
+            }
+          } else if (r[0] === 'no') {
+            //do again
+            player.html($("#turn").html());
+          } else if (r[0] === 'win') {
+            
+            //skrifa sigurvegara
+            if(r[1] === '0') {
+              //teikna X
+              $(cell).html("X");
+              console.log(r[1]);
+ 
+              console.log("winner is " + a);
+              $("#winner-name").html("Winner is " + a);
+            } else if (r[1] === '1') {
+              //teikna O
+              $(cell).html("O");
+              console.log("winner is " + b);
+              $("#winner-name").html("Winner is " + b);
+            }
+            console.log("winner is " + r[1]);
+            $("#gameover").show();
+          }else if (r[0] === 'draw' ) {
+            if (r[1] == '1') {
+              $(cell).html("O");
+            } else {
+              $(cell).html("X");
+            }
+            $("#winner-name").html("DRAW!");
+            $("#gameover").show();
+          } else {
+            console.log("unknown error");
+            
+          }
+        }).fail(function() {
+          console.log("error");
+        })
+      });
+     });
+    </script>
+  </body>
 </html>
