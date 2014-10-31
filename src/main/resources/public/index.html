@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html>
+<DOCTYPE XHMTL 1.0 Strict>
+<html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title>Herna labba kutur</title>
 
@@ -57,12 +57,14 @@
         <div id="winner">
             
         </div>
-        <button onclick="refreshPage()">NewGame</button>
+        <div>
+            <button onclick="refreshPage()">NewGame</button>
+        </div>
         <!-- Load jquery -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
         <!-- Use ajax to submit form, retrive joke and display on page -->
-        <script>
+        <script type="text/javascript">
                 function playTurn(a) {
                     $.ajax({
                         type: "post",
