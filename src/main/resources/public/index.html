@@ -62,9 +62,9 @@
 			</tr>			
         </table>
 
-        <div id="Result">
-
-        </div>
+        <div id="results" class="alert alert-info">How many Chuck Norris require to screw a light
+        
+        bulb? None, he will screw it all.</div>
 
 
         <form method="post" action="/newGame" class="form-inline" role="form">
@@ -85,7 +85,6 @@
                     url: form.attr('action'),
                     data: 'playTurn' + value
                 }).done(function(joke) {
-
                     $('#results').html(joke).attr('class', 'alert alert-success');
                 }).fail(function() {
                     $('#results').html('Error, no joke found...').attr('class', 'alert alert-danger');
