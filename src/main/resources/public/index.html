@@ -92,7 +92,7 @@
                         }
                         else{
                             $("#h" + lastPushed).hide();
-                            document.getElementById("s" + lastPushed).innerHTML = tmpArr[parseInt(lastPushed)];
+                            document.getElementById("s" + lastPushed).innerHTML = tmpArr[parseInt(lastPushed) - 1];
                             $("#s" + lastPushed).show();
                             document.getElementById("winner").innerHTML = String(result);
                             console.log(tmpStr);
