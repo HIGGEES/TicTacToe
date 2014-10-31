@@ -41,16 +41,16 @@ public class GameWeb implements SparkApplication {
 						{
 							if(ticTacToe.getMovesLeft() % 2 == 0)
 							{
-								winner.concat("leikmadur 1 bar sigur ur bitum");
+								winner = winner + "leikmadur 1 bar sigur ur bitum";
 							}
 							else
 							{
-								winner.concat("leikmadur 2 bar sigur ur bitum");
+								winner = winner + "leikmadur 2 bar sigur ur bitum";
 							}
 						}
 						else
 						{
-							winner.concat("enginn bar sigur ur bitum");
+							winner = winner + "enginn bar sigur ur bitum";
 						}
 						return winner;
 					}
