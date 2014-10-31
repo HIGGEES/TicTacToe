@@ -1,57 +1,59 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Hérna labba kútur</title>
+        <title>Herna labba kutur</title>
 
     </head>
     <body>
         <div>
             <h1>TicTacToe</h1>
         </div>
-        <table>
-        	<tr>
-			    <td>
-                	<button id="h1" value="1" onclick="playTurn(this)">1</button>
-                    <div id="s1"></div>
-                </td>
-			    <td>
-                	<button id="h2" value="2" onclick="playTurn(this)">2</button>
-                    <div id="s2"></div>
-                </td>
-                <td>
-                	<button id="h3" value="3" onclick="playTurn(this)">3</button>
-                    <div id="s3"></div>
-                </td>
-			</tr>
-        	<tr>
-			    <td>
-                	<button id="h4" value="4" onclick="playTurn(this)">4</button>
-                    <div id="s4"></div>
-                </td>
-			    <td>
-                	<button id="h5" value="5" onclick="playTurn(this)">5</button>
-                    <div id="s5"></div>
-                </td>
-                <td>
-                	<button id="h6" value="6" onclick="playTurn(this)">6</button>
-                    <div id="s6"></div>
-                </td>
-			</tr>
-        	<tr>
-			    <td>
-                	<button id="h7" value="7" onclick="playTurn(this)">7</button>
-                    <div id="s7"></div>
-                </td>
-			    <td>
-                	<button id="h8" value="8" onclick="playTurn(this)">8</button>
-                    <div id="s8"></div>
-                </td>
-                <td>
-                	<button id="h9" value="9" onclick="playTurn(this)">9</button>
-                    <div id="s9"></div>
-                </td>
-			</tr>			
-        </table>
+        <div class="theGame">
+            <table>
+            	<tr>
+    			    <td>
+                    	<button id="h1" value="1" onclick="playTurn(this)">1</button>
+                        <div id="s1"></div>
+                    </td>
+    			    <td>
+                    	<button id="h2" value="2" onclick="playTurn(this)">2</button>
+                        <div id="s2"></div>
+                    </td>
+                    <td>
+                    	<button id="h3" value="3" onclick="playTurn(this)">3</button>
+                        <div id="s3"></div>
+                    </td>
+    			</tr>
+            	<tr>
+    			    <td>
+                    	<button id="h4" value="4" onclick="playTurn(this)">4</button>
+                        <div id="s4"></div>
+                    </td>
+    			    <td>
+                    	<button id="h5" value="5" onclick="playTurn(this)">5</button>
+                        <div id="s5"></div>
+                    </td>
+                    <td>
+                    	<button id="h6" value="6" onclick="playTurn(this)">6</button>
+                        <div id="s6"></div>
+                    </td>
+    			</tr>
+            	<tr>
+    			    <td>
+                    	<button id="h7" value="7" onclick="playTurn(this)">7</button>
+                        <div id="s7"></div>
+                    </td>
+    			    <td>
+                    	<button id="h8" value="8" onclick="playTurn(this)">8</button>
+                        <div id="s8"></div>
+                    </td>
+                    <td>
+                    	<button id="h9" value="9" onclick="playTurn(this)">9</button>
+                        <div id="s9"></div>
+                    </td>
+    			</tr>			
+            </table>
+        </div>
         <div id="winner">
             
         </div>
@@ -70,6 +72,9 @@
                         var tmpStr = result;
                         if(tmpStr.indexOf("Leik Lokid") > -1){
                             console.log(tmpStr);
+                            $(".theGame").hide();
+                            document.getElementById("#winner").innerHTML = tmpStr;
+                            $("#winner").show();
                         }
                         else{
                             var tmpArr = tmpStr.split(" ");
