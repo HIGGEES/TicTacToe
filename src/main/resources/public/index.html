@@ -8,43 +8,41 @@
         <div>
             <h1>TicTacToe</h1>
         </div>
-        <form method="POST" action="/playTurn" class="form-inline" role="form" id="kalliBobo">
-            <table>
-            	<tr>
-    			    <td>
-                    	<input type="submit" value="1">
-                    </td>
-    			    <td>
-                    	<input type="submit" value="2">
-                    </td>
-                    <td>
-                    	<input type="submit" value="3">
-                    </td>
-    			</tr>
-            	<tr>
-    			    <td>
-                    	<input type="submit" value="4">
-                    </td>
-    			    <td>
-                    	<input type="submit" value="5">
-                    </td>
-                    <td>
-                    	<input type="submit" value="6">
-                    </td>
-    			</tr>
-            	<tr>
-    			    <td>
-                    	<input type="submit" value="7">
-                    </td>
-    			    <td>
-                    	<input type="submit" value="8">
-                    </td>
-                    <td>
-                    	<input type="submit" value="9">
-                    </td>
-    			</tr>			
-            </table>
-        </form>
+        <table>
+        	<tr>
+			    <td>
+                	<input type="submit" value="1" onclick="playTurn(1)">
+                </td>
+			    <td>
+                	<input type="submit" value="2" onclick="playTurn(2)">
+                </td>
+                <td>
+                	<input type="submit" value="3" onclick="playTurn(3)">
+                </td>
+			</tr>
+        	<tr>
+			    <td>
+                	<input type="submit" value="4" onclick="playTurn(4)">
+                </td>
+			    <td>
+                	<input type="submit" value="5" onclick="playTurn(5)">
+                </td>
+                <td>
+                	<input type="submit" value="6" onclick="playTurn(6)">
+                </td>
+			</tr>
+        	<tr>
+			    <td>
+                	<input type="submit" value="7" onclick="playTurn(7)">
+                </td>
+			    <td>
+                	<input type="submit" value="8" onclick="playTurn(8)">
+                </td>
+                <td>
+                	<input type="submit" value="9" onclick="playTurn(9)">
+                </td>
+			</tr>			
+        </table>
         <div id="results" class="alert alert-info">How many Chuck Norris require to screw a light
         bulb? None, he will screw it all.</div>
 
@@ -57,22 +55,16 @@
 
         <!-- Use ajax to submit form, retrive joke and display on page -->
         <script>
-
         $(document).ready(function() {
-            var form = $('form');
-            form.submit(function( event ) {
-                var form = $("#kalliBobo").val();
+            function playTurn(a) {
                 $.ajax({
-                    type: form.attr('method'),
-                    url: form.attr('action'),
-                    data: 'playTurn' + value
-                }).done(function(joke) {
-                    $('#results').html(joke).attr('class', 'alert alert-success');
-                }).fail(function() {
-                    $('#results').html('Error, no joke found...').attr('class', 'alert alert-danger');
-                });
-                event.preventDefault();
-            });
+                    type: "post".
+                    url: "playTurn",
+                    data: 'playTurn=' + a;
+                }).done(function(){
+                    alert("KalliBobo" + a);
+                }
+            }
         });
         </script>
     </body>
