@@ -43,26 +43,29 @@
                 </td>
 			</tr>			
         </table>
-        <div id="results" class="alert alert-info">How many Chuck Norris require to screw a light
-        bulb? None, he will screw it all.</div>
-
 
         <form method="post" action="/newGame" class="form-inline" role="form">
-            <button type="submit">NewGame</button>
+            <button onclick="refreshPage()">NewGame</button>
         </form>
         <!-- Load jquery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
         <!-- Use ajax to submit form, retrive joke and display on page -->
         <script>
-            $( document ).ready(function(){
-                console.log("Vid erum ready");
-                
                 function playTurn(a) {
-                        alert("Vid erum sexy");
-                        alert(a.value);
-                    }
-            });
+                    $.ajax({
+                        type: "post",
+                        url: "/playTurn",
+                        data: 'playTurn=' + a.value
+                    }).done(function(result){
+                        console.log(result.value);
+                    })
+
+//                        alert(a.value);
+                }
+                function refreshPage(){
+                    location.reload();
+                }
         </script>
     </body>
 </html>
