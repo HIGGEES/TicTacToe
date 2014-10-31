@@ -75,6 +75,13 @@ public class Game {
 		return b.toString();
 	}
 
+	public void resetGame(){
+		this.b = new Board();
+		this.movesLeft = 9;
+		this.player1 = new Player('X');
+		this.player2 = new Player('O');
+	}
+
 	public static void main(String[] args) {
 		//Scanner in = new Scanner(System.in);
 		int input;

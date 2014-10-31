@@ -97,7 +97,11 @@
                     })
                 }
                 function refreshPage(){
-                    location.reload();
+                    $.ajax({
+                        type: "post",
+                        url: "/newGame",
+                        data: null
+                    }).done(function(location.reload();))
                 }
         </script>
     </body>

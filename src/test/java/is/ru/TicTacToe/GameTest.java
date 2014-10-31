@@ -13,6 +13,19 @@ public class GameTest {
 	}
 
 	@Test
+	public void getMovesLeftForResetTest() {
+		Game g = new Game();
+		assertEquals(g.getMovesLeft(), 9);
+
+		char[] a = {'0','1','2',
+					'3','4','5',
+					'6','7','8'
+					}; //empty board
+		Board b = new Board(a);
+		assertEquals(g.drawBoard(), b.toString());
+	}
+
+	@Test
 	public void testPlayTurn() {
 		Game g = new Game();
 		assertEquals(g.playTurn(1),true);

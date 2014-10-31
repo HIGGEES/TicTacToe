@@ -60,15 +60,19 @@ public class GameWeb implements SparkApplication {
 					}
 			}
 		});
-	/*
+	
 		post(new Route("/newGame"){
 			@Override
 			public Object handle(Request request, Response response){
-				ticTacToe = new Game();
-				String board = ticTacToe.drawBoard();
+				ticTacToe.resetGame();
+				String board = "";
+					char[] tmp = ticTacToe.getBoard();
+					for(int x = 0; x < tmp.length - 1; x++){
+						board = board + tmp[x] + ' ';
+					}
+					board = board + tmp[tmp.length - 1];
 				return board;
 			}
-		});*/
-
+		});
 	}
 }
