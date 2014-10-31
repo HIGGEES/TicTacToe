@@ -68,10 +68,7 @@
                         data: 'playTurn=' + a.value
                     }).done(function(result){
                         var tmpStr = result;
-                        if(tmpStr.indexOf("Leik Lokid") > -1){
-                            console.log(result);
-                        }
-                        else{
+                        if(!tmpStr.indexOf("Leik Lokid") > -1){
                             var tmpArr = tmpStr.split(" ");
                             console.log(tmpArr);
                             for(var i = 0; i < tmpArr.length; i++){
@@ -94,6 +91,9 @@
                                     console.log("Fatal error!");
                                 }
                             }
+                        }
+                        else{
+                            console.log(result);
                         }
                     })
                 }
