@@ -76,18 +76,20 @@
                             console.log(tmpArr);
                             for(var i = 0; i < tmpArr.length; i++){
                                 //console.log(tmpArr[i]);
-                                if(tmpArr[i] == "X"){function(){
+                                if(tmpArr[i] == "X"){
+                                    (function(){
                                         $("#h1").hide();
                                         document.getElementById("h1").innerHTML = tmpArr[i];
                                         $("#s1").show();
-                                    }
+                                    });
                                 }
                                 }
-                                else if(tmpArr[i] == "O"){function(){
+                                else if(tmpArr[i] == "O"){
+                                    (function(){
                                         $("#h1").hide();
                                         document.getElementById("h1").innerHTML = tmpArr[i];
                                         $("#s1").show();
-                                    }
+                                    });
                                 }
                                 }
                                 else{
