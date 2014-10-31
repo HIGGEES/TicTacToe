@@ -77,23 +77,22 @@
                             for(var i = 0; i < tmpArr.length; i++){
                                 //console.log(tmpArr[i]);
                                 console.log(tmpArr[i]);
-                                if(tmpArr[i] === "X"){
+                                if(String(tmpArr[i]) === "X"){
                                     console.log("This is X");
-
-                                    /*(function(){
+                                        (function(){
                                         $("#h1").hide();
                                         document.getElementById("h1").innerHTML = tmpArr[i];
                                         $("#s1").show();
-                                    });*/
+                                    });
                                 }
                                 console.log(tmpArr[i]);
-                                else if(tmpArr[i] === "O"){
+                                else if(String(tmpArr[i]) === "O"){
                                     console.log("This is motherfucking O");
-                                    /*(function(){
+                                    (function(){
                                         $("#h1").hide();
                                         document.getElementById("h1").innerHTML = tmpArr[i];
                                         $("#s1").show();
-                                    });*/
+                                    });
                                 }
                                 else{
                                     console.log("Fatal error!");
