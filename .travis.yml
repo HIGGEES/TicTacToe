@@ -1,6 +1,8 @@
 language: java
 jdk:
   - openjdk7
- 
+ script:
+  - ./gradlew check
+  - ./gradlew seleniumXvfb
 
 # http://docs.travis-ci.com/user/build-configuration/
