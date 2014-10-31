@@ -59,7 +59,7 @@
                         data: 'playTurn=' + a.value
                     }).done(function(result){
                         var tmpStr = result;
-                        if(tmpStr.indexOf("Leik Lokið") > -1);{
+                        if(tmpStr.indexOf("Leik Lokið") > -1){
                             console.log(result);
                         }
                         else{
@@ -67,7 +67,6 @@
                             console.log(tmpArr);
                         }
                     })
-
                 }
                 function refreshPage(){
                     location.reload();
