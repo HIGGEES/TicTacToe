@@ -73,9 +73,10 @@
                         }
                         else{
                             var tmpArr = tmpStr.split(" ");
-                            console.log(tmpArr[2]);
+                            console.log(tmpArr);
                             for(var i = 0; i < tmpArr.length; i++){
-                                if(tmpArr[i] == 'x'){
+                                console.log(tmpArr[i]);
+                                /*if(tmpArr[i] == 'x'){
                                     $("d" + (i+1)).click(function(){
                                         $("h" + (i + 1)).hide();
                                         $("s" + (i + 1)).innerHTML = tmpArr[i];
@@ -91,7 +92,7 @@
                                 }
                                 else{
                                     console.log("Fatal error!");
-                                }
+                                }*/
                             }
                         }
                     })
