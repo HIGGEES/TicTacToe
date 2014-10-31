@@ -32,7 +32,7 @@ Windows
 
 -Travis
 
-Additional tools:
+##### Additional tools:
 
 Github.com
 
@@ -41,3 +41,13 @@ Greenqloud
 Putty
 
 Heroku
+
+##### Developers:
+
+Egill Jónsson
+Einar Ágúst Árnasson
+Guðjón Pétursson
+Gunnar Karl Pálmason
+Hrannar Már Ágústsson
+Ingvi Steinn Ólafsson
+Stefán Ingi Daníelsson
