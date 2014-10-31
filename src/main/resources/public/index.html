@@ -68,8 +68,10 @@
                         data: 'playTurn=' + a.value
                     }).done(function(result){
                         var tmpStr = result;
-                        var lastPushed = "";
-                        if(!tmpStr.indexOf("Leik Lokid") > -1){
+                        if(tmpStr.indexOf("Leik Lokid") > -1){
+                            console.log(tmpStr);
+                        }
+                        else{
                             var tmpArr = tmpStr.split(" ");
                             //console.log(tmpArr);
                             for(var i = 0; i < tmpArr.length; i++){
@@ -78,23 +80,14 @@
                                         $("#h" + String(i + 1)).hide();
                                         document.getElementById("s" + String(i + 1)).innerHTML = tmpArr[i];
                                         $("#s" + String(i + 1)).show();
-                                        lastPushed = String(i + 1);
                                 }
                                 else if(String(tmpArr[i]) == "O"){
                                     //console.log("This is motherfucking O");
                                         $("#h" + String(i + 1)).hide();
                                         document.getElementById("s" + String(i + 1)).innerHTML = tmpArr[i];
                                         $("#s" + String(i + 1)).show();
-                                        lastPushed = String(i + 1);
                                 }
                             }
-                        }
-                        else{
-                            console.log(tmpStr);
-                            $("#h" + lastPushed).hide();
-                            document.getElementById("s" + lastPushed).innerHTML = tmpArr[parseInt(lastPushed) - 1];
-                            $("#s" + lastPushed).show();
-                            document.getElementById("winner").innerHTML = String(result);
                         }
                     })
                 }
