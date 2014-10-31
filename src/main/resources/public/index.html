@@ -10,39 +10,42 @@
         </div>
         <table>
         	<tr>
-			    <td>
+			    <td id="1">
                 	<button value="1" onclick="playTurn(this)">1</button>
                 </td>
-			    <td>
+			    <td id="2">
                 	<button value="2" onclick="playTurn(this)">2</button>
                 </td>
-                <td>
+                <td id="3">
                 	<button value="3" onclick="playTurn(this)">3</button>
                 </td>
 			</tr>
         	<tr>
-			    <td>
+			    <td id="4">
                 	<button value="4" onclick="playTurn(this)">4</button>
                 </td>
-			    <td>
+			    <td id="5">
                 	<button value="5" onclick="playTurn(this)">5</button>
                 </td>
-                <td>
+                <td id="6">
                 	<button value="6" onclick="playTurn(this)">6</button>
                 </td>
 			</tr>
         	<tr>
-			    <td>
+			    <td id="7">
                 	<button value="7" onclick="playTurn(this)">7</button>
                 </td>
-			    <td>
+			    <td id="8">
                 	<button value="8" onclick="playTurn(this)">8</button>
                 </td>
-                <td>
+                <td id="9">
                 	<button value="9" onclick="playTurn(this)">9</button>
                 </td>
 			</tr>			
         </table>
+        <div id="winner">
+            Hérna mun koma hver vann! ;)
+        </div>
         <button onclick="refreshPage()">NewGame</button>
         <!-- Load jquery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -55,10 +58,16 @@
                         url: "/playTurn",
                         data: 'playTurn=' + a.value
                     }).done(function(result){
-                        console.log(result);
+                        var tmpStr = result;
+                        if(tmpStr.indexOf("Leik Lokið") > -1);{
+                            console.log(result);
+                        }
+                        else{
+                            var tmpArr = tmpStr.split(" ")
+                            console.log(tmpArr);
+                        }
                     })
 
-//                        alert(a.value);
                 }
                 function refreshPage(){
                     location.reload();
