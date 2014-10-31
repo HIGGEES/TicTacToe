@@ -72,15 +72,12 @@
                             var tmpArr = tmpStr.split(" ");
                             console.log(tmpArr);
                             for(var i = 0; i < tmpArr.length; i++){
-                                //console.log(tmpArr[i]);
-                                //console.log(tmpArr[i]);
                                 if(String(tmpArr[i]) == "X"){
                                     console.log("#h" + (i + 1));
                                         $("#h" + String(i + 1)).hide();
                                         document.getElementById("s" + String(i + 1)).innerHTML = tmpArr[i];
                                         $("#s" + String(i + 1)).show();
                                 }
-                                //console.log(tmpArr[i]);
                                 else if(String(tmpArr[i]) == "O"){
                                     console.log("This is motherfucking O");
                                         $("#h" + String(i + 1)).hide();
