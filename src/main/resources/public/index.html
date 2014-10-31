@@ -68,9 +68,9 @@
                         data: 'playTurn=' + a.value
                     }).done(function(result){
                         var tmpStr = result;
+                        var lastPushed = "";
                         if(!tmpStr.indexOf("Leik Lokid") > -1){
                             var tmpArr = tmpStr.split(" ");
-                            var lastPushed = "";
                             //console.log(tmpArr);
                             for(var i = 0; i < tmpArr.length; i++){
                                 if(String(tmpArr[i]) == "X"){
@@ -88,14 +88,13 @@
                                         lastPushed = String(i + 1);
                                 }
                             }
-
                         }
                         else{
+                            console.log(tmpStr);
                             $("#h" + lastPushed).hide();
                             document.getElementById("s" + lastPushed).innerHTML = tmpArr[parseInt(lastPushed) - 1];
                             $("#s" + lastPushed).show();
                             document.getElementById("winner").innerHTML = String(result);
-                            console.log(tmpStr);
                         }
                     })
                 }
