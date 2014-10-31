@@ -35,7 +35,7 @@ public class GameWeb implements SparkApplication {
 					for(int x = 0; x < tmp.length; x++){
 						board = board + tmp[x] + ' ';
 					}
-					if(!ticTacToe.gameOver()){
+					if(ticTacToe.gameOver()){
 						String winner = "Leik Lokid ";
 						if(ticTacToe.isWinner())
 						{
