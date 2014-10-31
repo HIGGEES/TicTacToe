@@ -75,15 +75,15 @@
                             var tmpArr = tmpStr.split(" ");
                             console.log(tmpArr);
                             for(var i = 0; i < tmpArr.length; i++){
-                                console.log(tmpArr[i]);
-                                /*if(tmpArr[i] == 'x'){
+                                //console.log(tmpArr[i]);
+                                if(tmpArr[i] === 'X'){
                                     $("d" + (i+1)).click(function(){
                                         $("h" + (i + 1)).hide();
                                         $("s" + (i + 1)).innerHTML = tmpArr[i];
                                         $("s" + (i + 1)).show();
                                     })
                                 }
-                                else if(tmpArr[i] == 'o'){
+                                else if(tmpArr[i] === 'O'){
                                     $("d" + (i+1)).click(function(){
                                         $("h" + (i + 1)).hide();
                                         $("s" + (i + 1)).innerHTML = tmpArr[i];
@@ -92,7 +92,7 @@
                                 }
                                 else{
                                     console.log("Fatal error!");
-                                }*/
+                                }
                             }
                         }
                     })
