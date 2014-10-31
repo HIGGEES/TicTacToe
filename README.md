@@ -1,16 +1,24 @@
 TicTacToe
 =========
 
-Game play:
+##### Game play:
+
 http://higgees.herokuapp.com/
 
-Source code:
+##### Source code:
+
 https://github.com/HIGGEES/TicTacToe
 
-Developer platforms:
+## screenshots
+
+![random](figures/TicTacToe.png)
+
+##### Developer platforms:
+
 Windows
 
-Software used:
+##### Software used:
+
 -Java version 1.7
 
 -Gradle
