@@ -62,6 +62,11 @@
 			</tr>			
         </table>
 
+        <div id="Result">
+
+        </div>
+
+
         <form method="post" action="/newGame" class="form-inline" role="form">
             <button type="submit">NewGame</button>
         </form>
@@ -71,21 +76,6 @@
         <!-- Use ajax to submit form, retrive joke and display on page -->
         <script>
 
-        $(document).ready(function() {
-            var form = $('form');
-            form.submit(function( event ) {
-                $.ajax({
-                    type: form.attr('method'),
-                    url: form.attr('action'),
-                    data: null
-                }).done(function(joke) {
-                    $('#results').html(joke).attr('class', 'alert alert-success');
-                }).fail(function() {
-                    $('#results').html('Error, no joke found...').attr('class', 'alert alert-danger');
-                });
-                event.preventDefault();
-            });
-        });
         $(document).ready(function() {
             var form = $('form');
             form.submit(function( event ) {
