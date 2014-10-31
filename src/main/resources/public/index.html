@@ -1,22 +1,108 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Tic Tac Toe</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- load bootstrap for nicer ui -->
-        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
-        <link rel="icon" type="image/png" href="favicon.png">
+        <title>TicTacToe</title>
+
     </head>
     <body>
-        <div class="container">
-            <h1>Tic Tac Toe</h1>
+        <div>
+            <h1>TicTacToe</h1>
         </div>
-	<div class="theGame">
-		<button type="button"
-			onclick="document.getElementById('demo').innerHTML = Date()">
-			Click me to display Date and Time.</button>
+        <table>
+        	<tr>
+			    <td>
+			    	<form method="post" action="/playTurn" class="form-inline" role="form">
+                		<input type="submit" value="1">
+                	</form>
+                </td>
+			    <td>
+			    	<form method="post" action="/playTurn" class="form-inline" role="form">
+                		<input type="submit" value="2"><br>
+                	</form>
+                </td>
+                <td>
+			    	<form method="post" action="/playTurn" class="form-inline" role="form">
+                		<input type="submit" value="3">
+                	</form>
+                </td>
+			</tr>
+        	<tr>
+			    <td>
+			    	<form method="post" action="/playTurn" class="form-inline" role="form">
+                		<input type="submit" value="4">
+                	</form>
+                </td>
+			    <td>
+			    	<form method="post" action="/playTurn" class="form-inline" role="form">
+                		<input type="submit" value="5">
+                	</form>
+                </td>
+                <td>
+			    	<form method="post" action="/playTurn" class="form-inline" role="form">
+                		<input type="submit" value="6">
+                	</form>
+                </td>
+			</tr>
+        	<tr>
+			    <td>
+			    	<form method="post" action="/playTurn" class="form-inline" role="form">
+                		<input type="submit" value="7">
+                	</form>
+                </td>
+			    <td>
+			    	<form method="post" action="/playTurn" class="form-inline" role="form">
+                		<input type="submit" value="8">
+                	</form>
+                </td>
+                <td>
+			    	<form method="post" action="/playTurn" class="form-inline" role="form">
+                		<input type="submit" value="9">
+                	</form>
+                </td>
+			</tr>			
+        </table>
 
-			<p id="demo"></p>
-	</div>
+        <form method="post" action="/newGame" class="form-inline" role="form">
+            <button type="submit">NewGame</button>
+        </form>
+        <!-- Load jquery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+        <!-- Use ajax to submit form, retrive joke and display on page -->
+        <script>
+
+        $(document).ready(function() {
+            var form = $('form');
+            form.submit(function( event ) {
+                $.ajax({
+                    type: form.attr('method'),
+                    url: form.attr('action'),
+                    data: null
+                }).done(function(joke) {
+                    $('#results').html(joke).attr('class', 'alert alert-success');
+                }).fail(function() {
+                    $('#results').html('Error, no joke found...').attr('class', 'alert alert-danger');
+                });
+                event.preventDefault();
+            });
+        });
+        $(document).ready(function() {
+            var form = $('form');
+            form.submit(function( event ) {
+                var form = $("#number").val();
+                $.ajax({
+                    type: form.attr('method'),
+                    url: form.attr('action'),
+                    data: 'playTurn' + value
+                }).done(function(joke) {
+
+                    $('#results').html(joke).attr('class', 'alert alert-success');
+                }).fail(function() {
+                    $('#results').html('Error, no joke found...').attr('class', 'alert alert-danger');
+                });
+                event.preventDefault();
+            });
+        });
+        </script>
     </body>
 </html>
