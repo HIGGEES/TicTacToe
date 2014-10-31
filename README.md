@@ -11,7 +11,7 @@ https://github.com/HIGGEES/TicTacToe
 
 ## screenshots
 
-![random](figures/TicTacToe.png)
+![random](Figures/TicTacToe.png)
 
 ##### Developer platforms:
 
