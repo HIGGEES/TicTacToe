@@ -53,7 +53,7 @@
 			</tr>			
         </table>
         <div id="winner">
-            Hérna mun koma hver vann! ;)
+            
         </div>
         <button onclick="refreshPage()">NewGame</button>
         <!-- Load jquery -->
@@ -90,7 +90,8 @@
                             }
                         }
                         else{
-                            console.log(result);
+                            document.getElementById("winner").innerHTML = String(result);
+                            console.log(tmpStr);
                         }
                     })
                 }
