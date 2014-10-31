@@ -79,16 +79,16 @@
                                 //console.log(tmpArr[i]);
                                 if(String(tmpArr[i]) == "X"){
                                     console.log("This is X");
-                                        $("#winner").hide();
-                                        document.getElementById("h1").innerHTML = tmpArr[i];
-                                        $("#s1").show();
+                                        $("#h" + String(i + 1)).hide();
+                                        document.getElementById("h" + String(i + 1)).innerHTML = tmpArr[i];
+                                        $("#s" + String(i + 1)).show();
                                 }
                                 //console.log(tmpArr[i]);
                                 else if(String(tmpArr[i]) == "O"){
                                     console.log("This is motherfucking O");
-                                        $("#winner").hide();
-                                        document.getElementById("h1").innerHTML = tmpArr[i];
-                                        $("#s1").show();
+                                        $("#h" + String(i + 1)).hide();
+                                        document.getElementById("h" + String(i + 1)).innerHTML = tmpArr[i];
+                                        $("#s" + String(i + 1)).show();
                                 }
                                 else{
                                     console.log("Fatal error!");
