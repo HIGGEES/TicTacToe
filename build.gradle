@@ -11,7 +11,7 @@
 apply plugin: 'java'
 apply plugin: 'application'
 
-mainClassName = "is.ru.TicTacToe.GameWeb"
+
 // In this section you declare where to find the dependencies of your project
 repositories {
     // Use 'jcenter' for resolving your dependencies.
@@ -63,15 +63,13 @@ dependencies {
     seleniumXvfbCompile 'org.seleniumhq.selenium:selenium-firefox-driver:2.25.0'
 }
 
-
+mainClassName = "is.ru.TicTacToe.GameWeb"
 
 task stage { 
 	dependsOn installApp 
 }
 
-
 // búa til task sem tekur TicTacToe jar file of færir útfyrir working directory
-
 def jarDir = new File('../TicTacToeGame')
 
 task extractJar {

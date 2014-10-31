@@ -10,7 +10,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.*;
 import org.openqa.selenium.WebDriver;
-public class ChuckWebTest {
+public class GameWebTest {
 static WebDriver driver;
 static String baseUrl;
 static String port;
