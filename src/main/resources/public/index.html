@@ -8,62 +8,44 @@
         <div>
             <h1>TicTacToe</h1>
         </div>
-        <table>
-        	<tr>
-			    <td>
-			    	<form method="post" action="/playTurn" class="form-inline" role="form">
-                		<input type="submit" value="1" class="kalliBobo">
-                	</form>
-                </td>
-			    <td>
-			    	<form method="post" action="/playTurn" class="form-inline" role="form">
-                		<input type="submit" value="2" class="kalliBobo"><br>
-                	</form>
-                </td>
-                <td>
-			    	<form method="post" action="/playTurn" class="form-inline " role="form">
-                		<input type="submit" value="3" class="kalliBobo">
-                	</form>
-                </td>
-			</tr>
-        	<tr>
-			    <td>
-			    	<form method="post" action="/playTurn" class="form-inline" role="form">
-                		<input type="submit" value="4">
-                	</form>
-                </td>
-			    <td>
-			    	<form method="post" action="/playTurn" class="form-inline" role="form">
-                		<input type="submit" value="5">
-                	</form>
-                </td>
-                <td>
-			    	<form method="post" action="/playTurn" class="form-inline" role="form">
-                		<input type="submit" value="6">
-                	</form>
-                </td>
-			</tr>
-        	<tr>
-			    <td>
-			    	<form method="post" action="/playTurn" class="form-inline" role="form">
-                		<input type="submit" value="7">
-                	</form>
-                </td>
-			    <td>
-			    	<form method="post" action="/playTurn" class="form-inline" role="form">
-                		<input type="submit" value="8">
-                	</form>
-                </td>
-                <td>
-			    	<form method="post" action="/playTurn" class="form-inline" role="form">
-                		<input type="submit" value="9">
-                	</form>
-                </td>
-			</tr>			
-        </table>
-
+        <form method="POST" action="/playTurn" class="form-inline" role="form" id="kalliBobo">
+            <table>
+            	<tr>
+    			    <td>
+                    	<input type="submit" value="1">
+                    </td>
+    			    <td>
+                    	<input type="submit" value="2">
+                    </td>
+                    <td>
+                    	<input type="submit" value="3">
+                    </td>
+    			</tr>
+            	<tr>
+    			    <td>
+                    	<input type="submit" value="4">
+                    </td>
+    			    <td>
+                    	<input type="submit" value="5">
+                    </td>
+                    <td>
+                    	<input type="submit" value="6">
+                    </td>
+    			</tr>
+            	<tr>
+    			    <td>
+                    	<input type="submit" value="7">
+                    </td>
+    			    <td>
+                    	<input type="submit" value="8">
+                    </td>
+                    <td>
+                    	<input type="submit" value="9">
+                    </td>
+    			</tr>			
+            </table>
+        </form>
         <div id="results" class="alert alert-info">How many Chuck Norris require to screw a light
-        
         bulb? None, he will screw it all.</div>
 
 
@@ -79,7 +61,7 @@
         $(document).ready(function() {
             var form = $('form');
             form.submit(function( event ) {
-                var form = $(".kalliBobo").val();
+                var form = $("#kalliBobo").val();
                 $.ajax({
                     type: form.attr('method'),
                     url: form.attr('action'),
