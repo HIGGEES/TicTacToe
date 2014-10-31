@@ -51,6 +51,11 @@ dependencies {
 
 mainClassName = "is.ru.TicTacToe.GameWeb"
 
+sourceSets {
+    selenium
+    seleniumXvfb    
+}
+
 task stage { 
 	dependsOn installApp 
 }
@@ -72,3 +77,40 @@ task extractJar {
     }   
 }
 
+
+
+task selenium(type: Test, dependsOn: installApp) {
+    testClassesDir = sourceSets.selenium.output.classesDir
+    classpath = sourceSets.selenium.runtimeClasspath
+
+    ant.condition(property: "os", value: "windows") { os(family: "windows") }
+    ant.condition(property: "os", value: "unix"   ) { os(family: "unix")    }
+
+    doFirst {
+        switch(ant.properties.os) {
+            case 'unix':
+                'build/install/TicTacToe/bin/TicTacToe &'.execute()
+                break
+            case 'windows':
+                'build\\install\\TicTacToe\\bin\\TicTacToe.bat'.execute()
+                break
+        }
+    }
+}
+
+
+task seleniumXvfb(type: Test, dependsOn: installApp) {
+    testClassesDir = sourceSets.selenium.output.classesDir
+    classpath = sourceSets.selenium.runtimeClasspath
+
+    environment "DISPLAY", ":99"
+
+    doFirst {
+        'bin/xvfb start'.execute()
+        'build/install/TicTacToe/bin/TicTacToe &'.execute()
+    }
+    
+    doLast {
+        'bin/xvfb stop'.execute()
+    }
+}
