@@ -11,6 +11,8 @@ The following programs are needed to run this program
 	Java JDK 7
 	Gradle
 	Putty
+	Firefox
+	Selenium IDE (plugin for firefox)
 
 Setting up the environment
 
