@@ -7,7 +7,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.firefox.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.*;
 import org.openqa.selenium.WebDriver;
 	
@@ -39,7 +39,6 @@ public class GameWebTest {
 	// Will be run before each test in class is run
 		;
 	}
-
 	@Test
 	public void assertTitle() {
 		driver.get(baseUrl + "/");
