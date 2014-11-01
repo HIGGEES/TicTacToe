@@ -89,12 +89,35 @@ public class GameWebTest {
                 driver.findElement(By.id("h5")).click();
                 Thread.sleep(100);
                 driver.findElement(By.id("h9")).click();
+		Thread.sleep(100);
+		driver.findElement(By.id("h8")).click();
 		WebDriverWait wait = new WebDriverWait(driver, 10);
                 wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("winner")));
                 String found = driver.findElement(By.id("winner")).getText();
                 String expected = "Leik Lokid leikmadur 2 bar sigur ur bitum";
                 assertEquals(expected, found);
 	}
+
+	@Test
+        public void testPlayer1Winner() throws Exception {
+                driver.get(baseUrl);
+                driver.findElement(By.xpath("//button[@onclick='refreshPage()']")).click();
+                driver.findElement(By.id("h1")).click();
+                Thread.sleep(100);
+                driver.findElement(By.id("h2")).click();
+                Thread.sleep(100);
+                driver.findElement(By.id("h4")).click();
+                Thread.sleep(100);
+                driver.findElement(By.id("h5")).click();
+                Thread.sleep(100);
+                driver.findElement(By.id("h7")).click();
+                WebDriverWait wait = new WebDriverWait(driver, 10);
+                wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("winner")));
+                String found = driver.findElement(By.id("winner")).getText();
+                String expected = "Leik Lokid leikmadur 1 bar sigur ur bitum";
+                assertEquals(expected, found);
+        }
+
 /*	
 	@Test
 	public void testAllButtons() throws Exception {
