@@ -112,13 +112,13 @@ task seleniumXvfb(type: Test, dependsOn: installApp) {
     environment "DISPLAY", ":99"
 
     doFirst {
-        // 'bin/xvfb start'.execute()
-        'sh -e /usr/bin/Xvfb :99 -ac -screen 0 1024x768x8 &'.execute()
+        'sh -e bin/xvfb start'.execute()
+        //'sh -e /usr/bin/Xvfb :99 -ac -screen 0 1024x768x8 &'.execute()
         'build/install/TicTacToe/bin/TicTacToe &'.execute()
        
     }
     
     doLast {
-        'sh -e /usr/bin/Xvfb stop'.execute()
+        'sh -e bin/xvfb stop'.execute()
     }
 }

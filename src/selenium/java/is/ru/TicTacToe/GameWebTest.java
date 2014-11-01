@@ -27,7 +27,7 @@ public class GameWebTest {
 		if(port == null) {
 			port = "4567";
 		}
-		baseUrl = "https://ghastly-monster-9605.herokuapp.com"; // + port;
+		baseUrl = "http://ghastly-monster-9605.herokuapp.com"; // + port;
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
 	
@@ -40,8 +40,8 @@ public class GameWebTest {
 	@Before
 	public void setup() {
 	// Will be run before each test in class is run
-		;
 	}
+
 	@Test
 	public void assertTitle() {
 		driver.get(baseUrl); // + "/");
@@ -50,7 +50,6 @@ public class GameWebTest {
 
 	@Test
 	public void testNoWinner() throws Exception {
-
 		driver.get(baseUrl);
 		driver.findElement(By.xpath("//button[@onclick='refreshPage()']")).click();
 		driver.findElement(By.id("h1")).click();
@@ -142,6 +141,6 @@ public class GameWebTest {
 		assertEquals("Higgees TicTacToe", selenium.getTitle());
 	}
 
-*/		
+*/
 }
 	
