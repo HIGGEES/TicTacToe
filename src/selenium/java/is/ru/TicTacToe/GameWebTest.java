@@ -47,23 +47,36 @@ public class GameWebTest {
 		driver.get(baseUrl); // + "/");
 		assertEquals("TicTacToe", driver.getTitle());
 	}
-/*
+
 	@Test
-	public void testPlayer1Winner() throws Exception {
-		selenium.open("http://higgees.herokuapp.com/");
-		selenium.click("h1");
-		Thread.sleep(NaN);
-		selenium.click("h2");
-		Thread.sleep(NaN);
-		selenium.click("h5");
-		Thread.sleep(NaN);
-		selenium.click("h6");
-		Thread.sleep(NaN);
-		selenium.click("h9");
-		Thread.sleep(NaN);
-		selenium.type("id=winner", "Leik Lokid leikmadur 1 bar sigur ur bitum");
-		selenium.click("//button[@onclick='refreshPage()']");
+	public void testNoWinner() throws Exception {
+
+		driver.get(baseUrl);
+		driver.findElement(By.xpath("//button[@onclick='refreshPage()']")).click();
+		driver.findElement(By.id("h1")).click();
+		Thread.sleep(100);
+		driver.findElement(By.id("h2")).click();
+		Thread.sleep(100);	
+		driver.findElement(By.id("h3")).click();
+		Thread.sleep(100);
+		driver.findElement(By.id("h5")).click();
+		Thread.sleep(100);
+		driver.findElement(By.id("h6")).click();
+		Thread.sleep(100);
+		driver.findElement(By.id("h7")).click();
+		Thread.sleep(100);
+		driver.findElement(By.id("h8")).click();
+		Thread.sleep(100);
+		driver.findElement(By.id("h9")).click();
+		Thread.sleep(100);
+		driver.findElement(By.id("h4")).click();
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+        	wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("winner")));
+		String found = driver.findElement(By.id("winner")).getText();
+		String expected = "Leik Lokid enginn bar sigur ur bitum";
+		assertEquals(expected, found);
 	}
+/*
 	@Test
 	public void testPlayer2Winner() throws Exception {
 		selenium.open("http://higgees.herokuapp.com/");
