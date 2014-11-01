@@ -53,7 +53,7 @@ public class GameWebTest {
 	public void testNoWinner() throws Exception {
 		driver.get(baseUrl);
 		driver.findElement(By.id("newGame")).click();
-		Thread.sleep(1000);
+		
 		driver.findElement(By.id("h1")).click();
 		Thread.sleep(100);
 		driver.findElement(By.id("h2")).click();
@@ -82,7 +82,7 @@ public class GameWebTest {
 	public void testPlayer2Winner() throws Exception {
 		driver.get(baseUrl);
 		driver.findElement(By.id("newGame")).click();
-				Thread.sleep(3000);
+				
 				
                 driver.findElement(By.id("h2")).click();
                 Thread.sleep(100);
@@ -92,9 +92,9 @@ public class GameWebTest {
                 Thread.sleep(100);
                 driver.findElement(By.id("h5")).click();
                 Thread.sleep(100);
-                driver.findElement(By.id("h9")).click();
+                driver.findElement(By.id("h3")).click();
 		Thread.sleep(100);
-		driver.findElement(By.id("h8")).click();
+		driver.findElement(By.id("h9")).click();
 		WebDriverWait wait = new WebDriverWait(driver, 10);
                 wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("winner")));
                 String found = driver.findElement(By.id("winner")).getText();
