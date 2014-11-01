@@ -165,7 +165,7 @@ public class GameWebTest {
 		selenium.type("id=winner", "Leik Lokid enginn bar sigur ur bitum");
 		selenium.click("//button[@onclick='refreshPage()']");
 	}
-*/
+
 	@Test
 	public void testHtmlValidate() throws Exception {
 		selenium.open("http://validator.w3.org/check?uri=https%3A%2F%2Fhiggees.herokuapp.com%2F&charset=%28detect+automatically%29&doctype=Inline&group=0");
@@ -173,7 +173,7 @@ public class GameWebTest {
 		selenium.open("http://higgees.herokuapp.com/");
 		assertEquals("Higgees TicTacToe", selenium.getTitle());
 	}
-
+*/
 
 }
 	
