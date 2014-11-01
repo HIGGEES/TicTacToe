@@ -76,7 +76,7 @@ public class GameWebTest {
 		String expected = "Leik Lokid enginn bar sigur ur bitum";
 		assertEquals(expected, found);
 	}
-/*
+
 	@Test
 	public void testPlayer2Winner() throws Exception {
 		driver.get(baseUrl);
@@ -98,7 +98,7 @@ public class GameWebTest {
                 String expected = "Leik Lokid leikmadur 2 bar sigur ur bitum";
                 assertEquals(expected, found);
 	}
-
+/*
 	@Test
         public void testPlayer1Winner() throws Exception {
                 driver.get(baseUrl);
