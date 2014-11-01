@@ -11,6 +11,8 @@ The following programs are needed to run this program
 	Java JDK 7
 	Gradle
 	Putty
+	Firefox
+	Selenium IDE (plugin for firefox)
 
 Setting up the environment
 
@@ -63,4 +65,4 @@ To run the application run the following commands from the root of the project:
         
         git push heroku master
         
-Then goto [yourr_app_name].herokuapps.com to play the game.    
+Then goto [your_app_name].herokuapp.com to play the game.    
