@@ -10,6 +10,7 @@
 // Apply the java plugin to add support for Java
 apply plugin: 'java'
 apply plugin: 'application'
+apply plugin:  'pmd'
 
 
 // In this section you declare where to find the dependencies of your project
@@ -19,9 +20,6 @@ repositories {
     jcenter()
 }
 
-
-// sourceCompatibility = 1.7
-// version = 1.0
 jar {
     baseName = 'TicTacToe'
     version =  '0.1.0'
@@ -31,7 +29,7 @@ jar {
                     'Built-Date': new Date(),
                     'Built-JDK': System.getProperty('java.version'),
                     'Built-Gradle': gradle.gradleVersion
-		    
+            
     }
 }
 
@@ -65,7 +63,7 @@ dependencies {
 mainClassName = "is.ru.TicTacToe.GameWeb"
 
 task stage { 
-	dependsOn installApp 
+    dependsOn installApp 
 }
 
 // búa til task sem tekur TicTacToe jar file of færir útfyrir working directory
@@ -121,4 +119,32 @@ task seleniumXvfb(type: Test, dependsOn: installApp) {
     doLast {
         'sh -e bin/xvfb stop'.execute()
     }
+}
+
+pmd {
+reportsDir = file('build/reports/pmd/html')
+ignoreFailures = true
+ruleSets = [
+'java-android',
+'java-basic',
+'java-braces',
+'java-clone',
+'java-coupling',
+'java-codesize',
+'java-design',
+'java-empty',
+'java-finalizers',
+'java-imports',
+'java-j2ee',
+'java-junit',
+'java-logging-jakarta-commons',
+'java-logging-java',
+'java-migrating',
+'java-optimizations',
+'java-strictexception',
+'java-strings',
+'java-typeresolution',
+'java-unnecessary',
+'java-unusedcode'
+]    
 }

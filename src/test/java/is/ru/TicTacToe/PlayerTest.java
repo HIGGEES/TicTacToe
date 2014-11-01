@@ -1,14 +1,14 @@
 package is.ru.TicTacToe;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 public class PlayerTest{
 	
 	@Test
 	public void getSymbolTest(){
-		Player p = new Player('x');
-		assertEquals('x', p.getSymbol());
+		final Player p = new Player('x');
+		assertEquals("Wrong symbol", 'x', p.getSymbol());
 	}
 
 
