@@ -102,11 +102,12 @@ public class GameWebTest {
         assertEquals(expected, found);
         driver.findElement(By.id("newGame")).click();
 	}
-/*
+
 	@Test
         public void testPlayer1Winner() throws Exception {
                 driver.get(baseUrl);
-                driver.findElement(By.xpath("//button[@onclick='refreshPage()']")).click();
+                driver.findElement(By.id("newGame")).click();
+                Thread.sleep(1000);
                 driver.findElement(By.id("h1")).click();
                 Thread.sleep(100);
                 driver.findElement(By.id("h2")).click();
@@ -121,9 +122,10 @@ public class GameWebTest {
                 String found = driver.findElement(By.id("winner")).getText();
                 String expected = "Leik Lokid leikmadur 1 bar sigur ur bitum";
                 assertEquals(expected, found);
+                driver.findElement(By.id("newGame")).click();
         }
 
-	
+	/*
 	@Test
 	public void testAllButtons() throws Exception {
 		selenium.open("http://higgees.herokuapp.com/");
@@ -163,7 +165,7 @@ public class GameWebTest {
 		selenium.type("id=winner", "Leik Lokid enginn bar sigur ur bitum");
 		selenium.click("//button[@onclick='refreshPage()']");
 	}
-
+*/
 	@Test
 	public void testHtmlValidate() throws Exception {
 		selenium.open("http://validator.w3.org/check?uri=https%3A%2F%2Fhiggees.herokuapp.com%2F&charset=%28detect+automatically%29&doctype=Inline&group=0");
@@ -172,6 +174,6 @@ public class GameWebTest {
 		assertEquals("Higgees TicTacToe", selenium.getTitle());
 	}
 
-*/
+
 }
 	
