@@ -1,13 +1,16 @@
 package is.ru.TicTacToe;
+
 import java.util.concurrent.TimeUnit;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
 import org.openqa.selenium.By;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.*;
 import org.openqa.selenium.WebDriver;
 	
@@ -19,12 +22,12 @@ public class GameWebTest {
 	@BeforeClass
 	public static void before() {
 	// Will be run before all tests in class are run
-		driver = new ChromeDriver();
+		driver = new FirefoxDriver();
 		port = System.getenv("PORT");
 		if(port == null) {
 			port = "4567";
 		}
-		baseUrl = "http://localhost:" + port;
+		baseUrl = "https://ghastly-monster-9605.herokuapp.com/ "; // + port;
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
 	

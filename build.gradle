@@ -60,7 +60,6 @@ dependencies {
 
     seleniumXvfbCompile 'junit:junit:4.11'
     seleniumXvfbCompile 'org.seleniumhq.selenium:selenium-java:2.40.0'
-    seleniumXvfbCompile 'org.seleniumhq.selenium:selenium-chrome-driver:2.23.0'
 }
 
 mainClassName = "is.ru.TicTacToe.GameWeb"
