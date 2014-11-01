@@ -52,7 +52,7 @@ public class GameWebTest {
 	@Test
 	public void testNoWinner() throws Exception {
 		driver.get(baseUrl);
-		driver.findElement(By.xpath("//button[@onclick='refreshPage()']")).click();
+		driver.findElement(By.id("newGame")).click();
 		driver.findElement(By.id("h1")).click();
 		Thread.sleep(100);
 		driver.findElement(By.id("h2")).click();
@@ -80,7 +80,7 @@ public class GameWebTest {
 	@Test
 	public void testPlayer2Winner() throws Exception {
 		driver.get(baseUrl);
-		driver.findElement(By.xpath("//button[@onclick='refreshPage()']")).click();
+		driver.findElement(By.id("newGame")).click();
                 driver.findElement(By.id("h2")).click();
                 Thread.sleep(100);
                 driver.findElement(By.id("h1")).click();
