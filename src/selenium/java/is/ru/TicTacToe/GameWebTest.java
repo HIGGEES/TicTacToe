@@ -48,6 +48,7 @@ public class GameWebTest {
 		assertEquals("TicTacToe", driver.getTitle());
 	}
 
+/*
 	@Test
 	public void testNoWinner() throws Exception {
 		driver.get(baseUrl);
@@ -118,7 +119,7 @@ public class GameWebTest {
                 assertEquals(expected, found);
         }
 
-/*	
+	
 	@Test
 	public void testAllButtons() throws Exception {
 		selenium.open("http://higgees.herokuapp.com/");
