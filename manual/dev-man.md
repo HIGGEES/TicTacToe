@@ -49,7 +49,7 @@ Setting up the environment
 
 5. Install and set up Heroku: for instructions for go to https://devcenter.heroku.com/articles/getting-started-with-java#introduction
 
-		wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+	wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 
 
 
