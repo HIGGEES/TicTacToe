@@ -1,20 +1,20 @@
 TicTacToe
 =========
-Administration Manual
+#### Administration Manual
 
 The following programs are needed to run this program
 
     Git
     Java JDK 7 
-    Maven
+    Gradle
 
-Setting up the environment
+###### Setting up the environment
 
-Install and set up Git, go to https://help.github.com/articles/set-up-git for instructions
+Install Git: go to https://help.github.com/articles/set-up-git for instructions
 
-Install and set up Java, go to http://www.java.com/en/download/help/windows_manual_download.xml for instructions
+Install Java: go to http://www.java.com/en/download/help/windows_manual_download.xml for instructions
 
-Install and set up Maven, go to http://www.mkyong.com/maven/how-to-install-maven-in-windows/ for instructions
+Install Gradle: go to http://www.gradle.org/docs/current/userguide/installation.html/ for instructions
 
 Install Travis
 
@@ -36,8 +36,10 @@ Go to https://www.heroku.com/ and create an account
 Deploy and Maintain
 
 To set the heroku key for travis run the following commands
+
             travis setup heroku
             travis encrypt HEROKU_API_KEY= --add
+            
 Connect your Travis account with Github
 Use Heroku toolbelt to create an app
 heroku create
