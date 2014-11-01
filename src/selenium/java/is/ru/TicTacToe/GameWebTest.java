@@ -80,10 +80,10 @@ public class GameWebTest {
 
 	@Test
 	public void testPlayer2Winner() throws Exception {
-		
+		driver.get(baseUrl);
 		driver.findElement(By.id("newGame")).click();
-				Thread.sleep(1000);
-				driver.get(baseUrl);
+				Thread.sleep(3000);
+				
                 driver.findElement(By.id("h2")).click();
                 Thread.sleep(100);
                 driver.findElement(By.id("h1")).click();
