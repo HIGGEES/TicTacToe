@@ -7,7 +7,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.ChromeDriver;
 import org.openqa.selenium.support.ui.*;
 import org.openqa.selenium.WebDriver;
 	
@@ -19,7 +19,7 @@ public class GameWebTest {
 	@BeforeClass
 	public static void before() {
 	// Will be run before all tests in class are run
-		driver = new FirefoxDriver();
+		driver = new ChromeDriver();
 		port = System.getenv("PORT");
 		if(port == null) {
 			port = "4567";
@@ -39,7 +39,7 @@ public class GameWebTest {
 	// Will be run before each test in class is run
 		;
 	}
-	
+
 	@Test
 	public void assertTitle() {
 		driver.get(baseUrl + "/");
