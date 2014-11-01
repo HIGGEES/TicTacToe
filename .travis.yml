@@ -13,17 +13,17 @@ after_script:
   - ./gradlew seleniumXvfb
 
   notifications:
-email:
-recepients:
-- gunnarkp13@ru.is
-- stefand12@ru.is
-- gudjon12@ru.is
-- ingvi10@ru.is
-- egillj13@ru.is
-- hrannar10@ru.is
-- einara12@ru.is
-on_success: change
-on_failure: always
+		email:
+			recepients:
+				- gunnarkp13@ru.is
+				- stefand12@ru.is
+				- gudjon12@ru.is
+				- ingvi10@ru.is
+				- egillj13@ru.is
+				- hrannar10@ru.is
+				- einara12@ru.is
+				on_success: change
+				on_failure: always
 
 
 # http://docs.travis-ci.com/user/build-configuration/
