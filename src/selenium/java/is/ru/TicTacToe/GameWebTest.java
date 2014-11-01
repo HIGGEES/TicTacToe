@@ -72,33 +72,35 @@ public class GameWebTest {
 		Thread.sleep(100);
 		driver.findElement(By.id("h4")).click();
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-        	wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("winner")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("winner")));
 		String found = driver.findElement(By.id("winner")).getText();
 		String expected = "Leik Lokid enginn bar sigur ur bitum";
 		assertEquals(expected, found);
+		driver.findElement(By.id("newGame")).click();
 	}
 
 	@Test
 	public void testPlayer2Winner() throws Exception {
 		driver.get(baseUrl);
 		driver.findElement(By.id("newGame")).click();
-				Thread.sleep(1000);
-                driver.findElement(By.id("h2")).click();
-                Thread.sleep(100);
-                driver.findElement(By.id("h1")).click();
-                Thread.sleep(100);
-                driver.findElement(By.id("h6")).click();
-                Thread.sleep(100);
-                driver.findElement(By.id("h5")).click();
-                Thread.sleep(100);
-                driver.findElement(By.id("h3")).click();
+		Thread.sleep(1000);
+        driver.findElement(By.id("h2")).click();
+        Thread.sleep(100);
+        driver.findElement(By.id("h1")).click();
+        Thread.sleep(100);
+        driver.findElement(By.id("h6")).click();
+        Thread.sleep(100);
+        driver.findElement(By.id("h5")).click();
+        Thread.sleep(100);
+        driver.findElement(By.id("h3")).click();
 		Thread.sleep(100);
 		driver.findElement(By.id("h9")).click();
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-                wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("winner")));
-                String found = driver.findElement(By.id("winner")).getText();
-                String expected = "Leik Lokid leikmadur 2 bar sigur ur bitum";
-                assertEquals(expected, found);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("winner")));
+        String found = driver.findElement(By.id("winner")).getText();
+        String expected = "Leik Lokid leikmadur 2 bar sigur ur bitum";
+        assertEquals(expected, found);
+        driver.findElement(By.id("newGame")).click();
 	}
 /*
 	@Test
