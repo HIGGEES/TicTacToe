@@ -3,7 +3,7 @@ jdk:
   - openjdk7
 
 addons:
-  firefox: "19.0"
+  firefox: "28.0"
 
 deploy:
   provider: heroku
