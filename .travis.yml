@@ -2,9 +2,8 @@ language: java
 jdk:
   - openjdk7
 
-before_install:
-  addons:
-    firefox: "28.0"
+addons:
+  firefox: "19.0"
 
 deploy:
   provider: heroku
