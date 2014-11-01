@@ -27,7 +27,7 @@ public class GameWebTest {
 		if(port == null) {
 			port = "4567";
 		}
-		baseUrl = "https://ghastly-monster-9605.herokuapp.com/ "; // + port;
+		baseUrl = "https://ghastly-monster-9605.herokuapp.com "; // + port;
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
 	
