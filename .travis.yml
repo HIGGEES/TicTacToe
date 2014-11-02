@@ -3,9 +3,6 @@ jdk:
   - openjdk7
 addons:
   firefox: "28.0"
-script:
-- ./gradlew check
-- ./gradlew seleniumXvfb
 deploy:
   provider: heroku
   api_key: "c167572d-edbc-4061-9921-fc81b439f28f"
@@ -14,6 +11,11 @@ deploy:
 after_script:
   - ./gradlew check
   - ./gradlew seleniumXvfb
+deploy:
+  provider: heroku
+  api_key: "22ff0d13-fcfd-466c-9751-e75fb7a64c35"
+  app: "ghastly-monster-9605"
+  strategy: git
 notifications:
   email:
     recipients:
