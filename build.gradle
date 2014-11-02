@@ -132,11 +132,9 @@ pmd {
    // reportsDir = file('build/reports/pmd/html')
     ignoreFailures = true
     ruleSets = [
-        'java-android',
         'java-basic',
         'java-braces',
         'java-clone',
-        'java-coupling',
         'java-codesize',
         'java-design',
         'java-empty',
@@ -155,6 +153,6 @@ pmd {
         'java-unusedcode'
     ]    
 }
+
 // runna í lok testa til að búa til jacoco report
 test.finalizedBy jacocoTestReport
-    
