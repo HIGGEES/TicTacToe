@@ -174,6 +174,15 @@ public class GameWebTest {
 		assertEquals("Higgees TicTacToe", selenium.getTitle());
 	}
 */
+	  @Test
+  public void testVAlidationOnSite() throws Exception {
+    driver.get("http://validator.w3.org/check?uri=https%3A%2F%2Ftictactoe-assignment.herokuapp.com%2F&charset=%28detect+automatically%29&doctype=Inline&group=0");
+    try {
+      assertEquals("This document was successfully checked as XHTML 1.0 Strict!", driver.findElement(By.cssSelector("h2.valid")).getText());
+    } catch (Error e) {
+      verificationErrors.append(e.toString());
+    }
+  }
 
 }
 	
