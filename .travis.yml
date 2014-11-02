@@ -1,18 +1,21 @@
 language: java
 jdk:
   - openjdk7
+  - oraclejdk7
 addons:
   firefox: "28.0"
+install:
+- wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+- heroku plugins:install https://github.com/ddollar/heroku-push
+script:
+- ./gradlew check
+- heroku push --app higgees-stage
+- ./gradlew seleniumXvfb
 deploy:
   provider: heroku
-  api_key: "c167572d-edbc-4061-9921-fc81b439f28f"
-  app: "tictactoe-assignment"
-  strategy: git 
-after_script:
-  - ./gradlew
-  - ./gradlew seleniumXvfb
-after_success:
-  - cat build/reports/jacoco/test/html/index.html
+  api_key: a2d549b2-bd8a-48c0-9fb6-561d465dc112
+  app: higgees
+  on: master 
 notifications:
   email:
     recipients:
