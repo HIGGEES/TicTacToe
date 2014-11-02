@@ -135,62 +135,14 @@ public class GameWebTest {
                 driver.findElement(By.id("newGame")).click();
         }
 
-	/*
 	@Test
-	public void testAllButtons() throws Exception {
-		selenium.open("http://higgees.herokuapp.com/");
-		selenium.click("h1");
-		selenium.click("h2");
-		selenium.click("h3");
-		selenium.click("h4");
-		selenium.click("h5");
-		selenium.click("h6");
-		selenium.click("h7");
-		selenium.click("h8");
-		selenium.click("h9");
-		selenium.click("//button[@onclick='refreshPage()']");
-	}
-
-	@Test
-	public void testNoWinner() throws Exception {
-		selenium.open("http://higgees.herokuapp.com/");
-		selenium.click("h1");
-		Thread.sleep(NaN);
-		selenium.click("h2");
-		Thread.sleep(NaN);
-		selenium.click("h3");
-		Thread.sleep(NaN);
-		selenium.click("h5");
-		Thread.sleep(NaN);
-		selenium.click("h6");
-		Thread.sleep(NaN);
-		selenium.click("h7");
-		Thread.sleep(NaN);
-		selenium.click("h8");
-		Thread.sleep(NaN);
-		selenium.click("h9");
-		Thread.sleep(NaN);
-		selenium.click("h4");
-		Thread.sleep(NaN);
-		selenium.type("id=winner", "Leik Lokid enginn bar sigur ur bitum");
-		selenium.click("//button[@onclick='refreshPage()']");
-	}
-
-	@Test
-	public void testHtmlValidate() throws Exception {
-		selenium.open("http://validator.w3.org/check?uri=https%3A%2F%2Fhiggees.herokuapp.com%2F&charset=%28detect+automatically%29&doctype=Inline&group=0");
-		assertEquals("This document was successfully checked as XHTML 1.0 Strict!", selenium.getText("css=h2.valid"));
-		selenium.open("http://higgees.herokuapp.com/");
-		assertEquals("Higgees TicTacToe", selenium.getTitle());
-	}
-*/
-	  @Test
-  public void testVAlidationOnSite() throws Exception {
-    driver.get("http://validator.w3.org/check?uri=https%3A%2F%2Ftictactoe-assignment.herokuapp.com%2F&charset=%28detect+automatically%29&doctype=Inline&group=0");
-    try {
-      assertEquals("This document was successfully checked as XHTML 1.0 Strict!", driver.findElement(By.cssSelector("h2.valid")).getText());
-    } catch (Error e) {
-      verificationErrors.append(e.toString());
+  		public void testVAlidationOnSite() throws Exception {
+    	driver.get("http://validator.w3.org/check?uri=https%3A%2F%2Ftictactoe-assignment.herokuapp.com%2F&charset=%28detect+automatically%29&doctype=Inline&group=0");
+    	try {
+      		assertEquals("This document was successfully checked as XHTML 1.0 Strict!", driver.findElement(By.cssSelector("h2.valid")).getText());
+    	}
+    	catch (Error e) {
+      		verificationErrors.append(e.toString());
     }
   }
 
