@@ -16,7 +16,7 @@ public class BoardTest {
 	
 	private char[] getWinnerBoard() {
 		final char[] b = {	'X','1','2',
-				'3','O','5',
+				'3','X','5',
 				'O','O','X'
 		};
 		return b;
