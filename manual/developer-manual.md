@@ -46,8 +46,9 @@ Setting up the environment
 
 4. Install and set up Travis:
 
-	sudo apt-get install -y make ruby1.9.1-dev
-	sudo gem1.9.1 install travis
+		sudo apt-get install -y make ruby1.9.1-dev
+	
+		sudo gem1.9.1 install travis
 
 5. Install and set up Heroku: for instructions for go to https://devcenter.heroku.com/articles/getting-started-with-java#introduction
 
