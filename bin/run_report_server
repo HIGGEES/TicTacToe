@@ -1,0 +1,4 @@
+#!/bin/bash
+cd build/reports/
+echo "<html><head><title>Rassgat</title></head><body><a href=\"jacoco/test/html/index.html\">Jacoco Report</a> | <a href=\"tests/index.html\">Tests</a> | PMD { <a href=\"pmd/main.html\">main</a>, <a href=\"pmd/selenium.html\">Selenium</a>, <a href=\"pmd/test.html\">Test</a> }</body><html>" > index.html
+python -m SimpleHTTPServer 8080

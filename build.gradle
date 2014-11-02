@@ -25,7 +25,7 @@ jar {
     baseName = 'TicTacToe'
     version =  '0.1.0'
     manifest {
-        attributes  'Main-Class': 'is.ru.TicTacToe.Game',
+        attributes  'Main-Class': 'is.ru.TicTacToe.GameWeb',
                     'Built-By': System.getProperty('user.name'),
                     'Built-Date': new Date(),
                     'Built-JDK': System.getProperty('java.version'),
@@ -73,7 +73,7 @@ def jarDir = new File('../TicTacToeGame')
 
 task extractJar {
     group 'HIGGEES'
-    description 'Extract jar file into parent folder of working directory'
+    description 'Copy CLI program jar package into parent folder of working directory'
     doFirst{
         if(!jarDir.isDirectory()){
             jarDir.mkdirs()
