@@ -11,12 +11,6 @@ deploy:
 after_script:
   - ./gradlew check
   - ./gradlew seleniumXvfb
-after_success:
-  deploy:
-    provider: heroku
-    api_key: "22ff0d13-fcfd-466c-9751-e75fb7a64c35"
-    app: "ghastly-monster-9605"
-    strategy: git
 notifications:
   email:
     recipients:
