@@ -10,7 +10,8 @@
 // Apply the java plugin to add support for Java
 apply plugin: 'java'
 apply plugin: 'application'
-apply plugin:  'pmd'
+apply plugin: 'pmd' // Code Inspection
+apply plugin: 'jacoco' // Code Covarage
 
 
 // In this section you declare where to find the dependencies of your project
@@ -39,16 +40,10 @@ sourceSets {
 }
 
 
-
 // In this section you declare the dependencies for your production and test code
 dependencies {
-    // The production code uses the SLF4J logging API at compile time
     compile 'org.slf4j:slf4j-api:1.7.5'
 
-    // Declare the dependency for your favourite test framework you want to use in your tests.
-    // TestNG is also supported by the Gradle Test task. Just change the
-    // testCompile dependency to testCompile 'org.testng:testng:6.8.1' and add
-    // 'test.useTestNG()' to your build script.
     testCompile 'junit:junit:4.11'
 
     compile 'com.sparkjava:spark-core:1.1.1'
@@ -66,7 +61,12 @@ task stage {
     dependsOn installApp 
 }
 
-// búa til task sem tekur TicTacToe jar file of færir útfyrir working directory
+jacocoTestReport {
+    group = "Reporting"
+    description = "Generate Jacoco coverage reports after running tests."
+    additionalSourceDirs = files(sourceSets.main.allJava.srcDirs)
+}
+
 def jarDir = new File('../TicTacToeGame')
 
 task extractJar {
@@ -122,29 +122,32 @@ task seleniumXvfb(type: Test, dependsOn: installApp) {
 }
 
 pmd {
-reportsDir = file('build/reports/pmd/html')
-ignoreFailures = true
-ruleSets = [
-'java-android',
-'java-basic',
-'java-braces',
-'java-clone',
-'java-coupling',
-'java-codesize',
-'java-design',
-'java-empty',
-'java-finalizers',
-'java-imports',
-'java-j2ee',
-'java-junit',
-'java-logging-jakarta-commons',
-'java-logging-java',
-'java-migrating',
-'java-optimizations',
-'java-strictexception',
-'java-strings',
-'java-typeresolution',
-'java-unnecessary',
-'java-unusedcode'
-]    
+    reportsDir = file('build/reports/pmd/html')
+    ignoreFailures = true
+    ruleSets = [
+        'java-android',
+        'java-basic',
+        'java-braces',
+        'java-clone',
+        'java-coupling',
+        'java-codesize',
+        'java-design',
+        'java-empty',
+        'java-finalizers',
+        'java-imports',
+        'java-j2ee',
+        'java-junit',
+        'java-logging-jakarta-commons',
+        'java-logging-java',
+        'java-migrating',
+        'java-optimizations',
+        'java-strictexception',
+        'java-strings',
+        'java-typeresolution',
+        'java-unnecessary',
+        'java-unusedcode'
+    ]    
 }
+
+// runna í lok testa til að búa til jacoco report
+test.finalizedBy jacocoTestReport
