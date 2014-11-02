@@ -11,8 +11,8 @@ deploy:
 after_script:
   - ./gradlew
   - ./gradlew seleniumXvfb
-
-
+after_success:
+  - cat build/reports/jacoco/test/html/index.html
 notifications:
   email:
     recipients:
