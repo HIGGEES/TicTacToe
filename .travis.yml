@@ -8,7 +8,7 @@ deploy:
   api_key: "c167572d-edbc-4061-9921-fc81b439f28f"
   app: "tictactoe-assignment"
   strategy: git 
-after_script:
+after_deploy:
   - ./gradlew check
   - ./gradlew seleniumXvfb
 notifications:
