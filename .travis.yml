@@ -1,8 +1,12 @@
 language: java
 jdk:
   - openjdk7
+  - oraclejdk7
 addons:
   firefox: "28.0"
+script:
+- ./gradlew check
+- ./gradlew seleniumXvfb
 deploy:
   provider: heroku
   api_key: "c167572d-edbc-4061-9921-fc81b439f28f"
