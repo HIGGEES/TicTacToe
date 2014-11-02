@@ -9,7 +9,7 @@ deploy:
   app: "tictactoe-assignment"
   strategy: git 
 after_script:
-  - ./gradlew
+  - ./gradlew check
   - ./gradlew seleniumXvfb
 after_success:
   - cat build/reports/jacoco/test/html/index.html
