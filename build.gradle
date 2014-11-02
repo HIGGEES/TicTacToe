@@ -57,12 +57,14 @@ dependencies {
 
 mainClassName = "is.ru.TicTacToe.GameWeb"
 
-task stage { 
+task stage {
+    group 'HIGGEES'
+    description 'Task that depends on installApp.. to install the app' 
     dependsOn installApp 
 }
 
 jacocoTestReport {
-    group = "Reporting"
+    group = 'HIGGEES'
     description = "Generate Jacoco coverage reports after running tests."
     additionalSourceDirs = files(sourceSets.main.allJava.srcDirs)
 }
@@ -70,6 +72,8 @@ jacocoTestReport {
 def jarDir = new File('../TicTacToeGame')
 
 task extractJar {
+    group 'HIGGEES'
+    description 'Extract jar file into parent folder of working directory'
     doFirst{
         if(!jarDir.isDirectory()){
             jarDir.mkdirs()
@@ -84,6 +88,8 @@ task extractJar {
 
 
 task selenium(type: Test, dependsOn: installApp) {
+    group 'HIGGEES'
+    description 'Run selenium tests depending on Operating System'
     testClassesDir = sourceSets.selenium.output.classesDir
     classpath = sourceSets.selenium.runtimeClasspath
 
@@ -104,6 +110,8 @@ task selenium(type: Test, dependsOn: installApp) {
 
 
 task seleniumXvfb(type: Test, dependsOn: installApp) {
+    group 'HIGGEES'
+    description 'Start a Display with Xvfb and make selenium tests'
     testClassesDir = sourceSets.selenium.output.classesDir
     classpath = sourceSets.selenium.runtimeClasspath
 
@@ -111,9 +119,7 @@ task seleniumXvfb(type: Test, dependsOn: installApp) {
 
     doFirst {
         'sh -e bin/xvfb start'.execute()
-        //'sh -e /usr/bin/Xvfb :99 -ac -screen 0 1024x768x8 &'.execute()
         'build/install/TicTacToe/bin/TicTacToe &'.execute()
-       
     }
     
     doLast {
@@ -121,8 +127,9 @@ task seleniumXvfb(type: Test, dependsOn: installApp) {
     }
 }
 
+
 pmd {
-    reportsDir = file('build/reports/pmd/html')
+   // reportsDir = file('build/reports/pmd/html')
     ignoreFailures = true
     ruleSets = [
         'java-android',
@@ -148,6 +155,6 @@ pmd {
         'java-unusedcode'
     ]    
 }
-
 // runna í lok testa til að búa til jacoco report
 test.finalizedBy jacocoTestReport
+    
