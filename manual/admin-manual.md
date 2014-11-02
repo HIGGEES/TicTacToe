@@ -24,8 +24,7 @@ Install and setup Heroku
 
             wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 
-Fork this repository
-Clone the project to your computer, run this command:
+Clone the project to your computer by running this command:
 
         git clone git@github.com:[Your_Username]/[ProjectName].git
 
@@ -41,17 +40,27 @@ To set the heroku key for travis run the following commands
             
 Connect your Travis account with Github then use Heroku toolbelt to create an app
 
-    heroku create
+    heroku create --remote staging [your_stage_app_name]
+    heroku create --remote production [your_production_app_name]
     
-Create on app as staging server and one app as production server.
+Create an app as staging server:
+
+    git push staging master
+    
+Create an app as production server:
+
+    git push production master
+
 Change the .travis.yml file according to the heroku apps you just created
 
             app: "ghastly-monster-9605"
             repo: HIGGEES/TicTacToe  --> repo: [yourRepository]
-            export STAGING_SERVER=http://minuz.herokuapp.com/  --> - export                STAGING_SERVER=http://[yourAppName].herokuapp.com/
-            
-            
-            
+            export STAGING_SERVER=http://higgees-stage.herokuapp.com/  
+            --> - export STAGING_SERVER=http://[your_stage_app_name].herokuapp.com/
+            export PRODUCTION_SERVER=http://higgees.herokuapp.com/
+            --> - export PRODUCTION_SERVER=http://higgees.herokuapp.com/
+    
+    
+Now everything should be up and running and you will be able to make changes to the program and push them on to github as well on your staging server 
 Now you can make some changes to the repository and push them to github and after the project has passed all test it should be up and running on your heroku apps at http://[yourHerokuAppName].herokuapp.com/
-
 
