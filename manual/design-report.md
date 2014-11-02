@@ -1,7 +1,9 @@
 Design report
 =============
-Tic Tac Toe is coded in the JAVA language and runs on Spark.
+Tic Tac Toe is a game coded in the JAVA language using Test Driven Development and Travis for Automated Continuous Integration Server.
+
 Tic Tac Toe has three classes: Game, Board and Player.
+
 Below are the classes with it´s functions and main variables .
 
 ####Game
